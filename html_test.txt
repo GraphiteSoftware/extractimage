@@ -1,0 +1,3060 @@
+False False False
+Full line is [
+]
+Name is [None].
+Full line is [<div class="phone_hd ">
+<span>Xiaomi Mi 6</span>
+<span class="tab" id="t_480">Mi 6 Global</span><span class="tab" id="t_481">Mi 6 China</span>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<span>Xiaomi Mi 6</span>]
+Name is [span].
+Full line is [Xiaomi Mi 6]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="tab" id="t_480">Mi 6 Global</span>]
+Name is [span].
+Full line is [Mi 6 Global]
+Name is [None].
+Full line is [<span class="tab" id="t_481">Mi 6 China</span>]
+Name is [span].
+Full line is [Mi 6 China]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="content" id="content_t_480">
+<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<h2>Stable ROM</h2>]
+Name is [h2].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Full ROM pack</a>]
+Name is [a].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<li><span class="index"></span><a href="javascript:;">Older versions</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Older versions</a>]
+Name is [a].
+Full line is [Older versions]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_6" href="http://en.miui.com/a-232.html"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>]
+Name is [p].
+Full line is [Author: MIUI Official Team]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            ]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Size: 1.5G]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>]
+Name is [p].
+Full line is [Download MIUI Forum app to get the latest updates ]
+Name is [None].
+Full line is [<a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a>]
+Name is [a].
+Full line is [Download
+                            now]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Older versions]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Author: MIUI
+                    Official Team
+                ]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>]
+Name is [li].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="span_version">Version: V8.2.2.0.NCAMIEC</span>]
+Name is [span].
+Full line is [Version: V8.2.2.0.NCAMIEC]
+Name is [None].
+Full line is [<span class="span_size"> 1.5G </span>]
+Name is [span].
+Full line is [ 1.5G ]
+Name is [None].
+Full line is [<span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span>]
+Name is [span].
+Full line is [MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0]
+Name is [None].
+Full line is [<span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span>]
+Name is [span].
+Full line is [<a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a>]
+Name is [a].
+Full line is [Changelog]
+Name is [None].
+Full line is [<span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>]
+Name is [span].
+Full line is [<a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div style="clear:both;"></div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="phone_hd ">
+<span>Xiaomi Mi 6</span>
+<span class="tab" id="t_480">Mi 6 Global</span><span class="tab" id="t_481">Mi 6 China</span>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<span>Xiaomi Mi 6</span>]
+Name is [span].
+Full line is [Xiaomi Mi 6]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="tab" id="t_480">Mi 6 Global</span>]
+Name is [span].
+Full line is [Mi 6 Global]
+Name is [None].
+Full line is [<span class="tab" id="t_481">Mi 6 China</span>]
+Name is [span].
+Full line is [Mi 6 China]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="content" id="content_t_480">
+<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<h2>Stable ROM</h2>]
+Name is [h2].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Full ROM pack</a>]
+Name is [a].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<li><span class="index"></span><a href="javascript:;">Older versions</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Older versions</a>]
+Name is [a].
+Full line is [Older versions]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_6" href="http://en.miui.com/a-232.html"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>]
+Name is [p].
+Full line is [Author: MIUI Official Team]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            ]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Size: 1.5G]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>]
+Name is [p].
+Full line is [Download MIUI Forum app to get the latest updates ]
+Name is [None].
+Full line is [<a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a>]
+Name is [a].
+Full line is [Download
+                            now]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Older versions]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Author: MIUI
+                    Official Team
+                ]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>]
+Name is [li].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="span_version">Version: V8.2.2.0.NCAMIEC</span>]
+Name is [span].
+Full line is [Version: V8.2.2.0.NCAMIEC]
+Name is [None].
+Full line is [<span class="span_size"> 1.5G </span>]
+Name is [span].
+Full line is [ 1.5G ]
+Name is [None].
+Full line is [<span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span>]
+Name is [span].
+Full line is [MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0]
+Name is [None].
+Full line is [<span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span>]
+Name is [span].
+Full line is [<a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a>]
+Name is [a].
+Full line is [Changelog]
+Name is [None].
+Full line is [<span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>]
+Name is [span].
+Full line is [<a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div style="clear:both;"></div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="phone_hd ">
+<span>Xiaomi Mi 6</span>
+<span class="tab" id="t_480">Mi 6 Global</span><span class="tab" id="t_481">Mi 6 China</span>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<span>Xiaomi Mi 6</span>]
+Name is [span].
+Full line is [Xiaomi Mi 6]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="tab" id="t_480">Mi 6 Global</span>]
+Name is [span].
+Full line is [Mi 6 Global]
+Name is [None].
+Full line is [<span class="tab" id="t_481">Mi 6 China</span>]
+Name is [span].
+Full line is [Mi 6 China]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="content" id="content_t_480">
+<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<h2>Stable ROM</h2>]
+Name is [h2].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Full ROM pack</a>]
+Name is [a].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<li><span class="index"></span><a href="javascript:;">Older versions</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Older versions</a>]
+Name is [a].
+Full line is [Older versions]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_6" href="http://en.miui.com/a-232.html"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>]
+Name is [p].
+Full line is [Author: MIUI Official Team]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            ]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Size: 1.5G]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>]
+Name is [p].
+Full line is [Download MIUI Forum app to get the latest updates ]
+Name is [None].
+Full line is [<a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a>]
+Name is [a].
+Full line is [Download
+                            now]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Older versions]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Author: MIUI
+                    Official Team
+                ]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>]
+Name is [li].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="span_version">Version: V8.2.2.0.NCAMIEC</span>]
+Name is [span].
+Full line is [Version: V8.2.2.0.NCAMIEC]
+Name is [None].
+Full line is [<span class="span_size"> 1.5G </span>]
+Name is [span].
+Full line is [ 1.5G ]
+Name is [None].
+Full line is [<span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span>]
+Name is [span].
+Full line is [MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0]
+Name is [None].
+Full line is [<span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span>]
+Name is [span].
+Full line is [<a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a>]
+Name is [a].
+Full line is [Changelog]
+Name is [None].
+Full line is [<span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>]
+Name is [span].
+Full line is [<a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div style="clear:both;"></div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="phone_hd ">
+<span>Xiaomi Mi 6</span>
+<span class="tab" id="t_480">Mi 6 Global</span><span class="tab" id="t_481">Mi 6 China</span>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<span>Xiaomi Mi 6</span>]
+Name is [span].
+Full line is [Xiaomi Mi 6]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="tab" id="t_480">Mi 6 Global</span>]
+Name is [span].
+Full line is [Mi 6 Global]
+Name is [None].
+Full line is [<span class="tab" id="t_481">Mi 6 China</span>]
+Name is [span].
+Full line is [Mi 6 China]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="content" id="content_t_480">
+<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<h2>Stable ROM</h2>]
+Name is [h2].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Full ROM pack</a>]
+Name is [a].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<li><span class="index"></span><a href="javascript:;">Older versions</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Older versions</a>]
+Name is [a].
+Full line is [Older versions]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_6" href="http://en.miui.com/a-232.html"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>]
+Name is [p].
+Full line is [Author: MIUI Official Team]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            ]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Size: 1.5G]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>]
+Name is [p].
+Full line is [Download MIUI Forum app to get the latest updates ]
+Name is [None].
+Full line is [<a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a>]
+Name is [a].
+Full line is [Download
+                            now]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Older versions]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Author: MIUI
+                    Official Team
+                ]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>]
+Name is [li].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="span_version">Version: V8.2.2.0.NCAMIEC</span>]
+Name is [span].
+Full line is [Version: V8.2.2.0.NCAMIEC]
+Name is [None].
+Full line is [<span class="span_size"> 1.5G </span>]
+Name is [span].
+Full line is [ 1.5G ]
+Name is [None].
+Full line is [<span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span>]
+Name is [span].
+Full line is [MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0]
+Name is [None].
+Full line is [<span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span>]
+Name is [span].
+Full line is [<a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a>]
+Name is [a].
+Full line is [Changelog]
+Name is [None].
+Full line is [<span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>]
+Name is [span].
+Full line is [<a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div style="clear:both;"></div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="phone_hd ">
+<span>Xiaomi Mi 6</span>
+<span class="tab" id="t_480">Mi 6 Global</span><span class="tab" id="t_481">Mi 6 China</span>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<span>Xiaomi Mi 6</span>]
+Name is [span].
+Full line is [Xiaomi Mi 6]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="tab" id="t_480">Mi 6 Global</span>]
+Name is [span].
+Full line is [Mi 6 Global]
+Name is [None].
+Full line is [<span class="tab" id="t_481">Mi 6 China</span>]
+Name is [span].
+Full line is [Mi 6 China]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="content" id="content_t_480">
+<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<h2>Stable ROM</h2>]
+Name is [h2].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Full ROM pack</a>]
+Name is [a].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<li><span class="index"></span><a href="javascript:;">Older versions</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Older versions</a>]
+Name is [a].
+Full line is [Older versions]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_6" href="http://en.miui.com/a-232.html"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>]
+Name is [p].
+Full line is [Author: MIUI Official Team]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            ]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Size: 1.5G]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>]
+Name is [p].
+Full line is [Download MIUI Forum app to get the latest updates ]
+Name is [None].
+Full line is [<a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a>]
+Name is [a].
+Full line is [Download
+                            now]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Older versions]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Author: MIUI
+                    Official Team
+                ]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>]
+Name is [li].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="span_version">Version: V8.2.2.0.NCAMIEC</span>]
+Name is [span].
+Full line is [Version: V8.2.2.0.NCAMIEC]
+Name is [None].
+Full line is [<span class="span_size"> 1.5G </span>]
+Name is [span].
+Full line is [ 1.5G ]
+Name is [None].
+Full line is [<span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span>]
+Name is [span].
+Full line is [MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0]
+Name is [None].
+Full line is [<span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span>]
+Name is [span].
+Full line is [<a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a>]
+Name is [a].
+Full line is [Changelog]
+Name is [None].
+Full line is [<span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>]
+Name is [span].
+Full line is [<a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div style="clear:both;"></div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="phone_hd ">
+<span>Xiaomi Mi 6</span>
+<span class="tab" id="t_480">Mi 6 Global</span><span class="tab" id="t_481">Mi 6 China</span>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<span>Xiaomi Mi 6</span>]
+Name is [span].
+Full line is [Xiaomi Mi 6]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="tab" id="t_480">Mi 6 Global</span>]
+Name is [span].
+Full line is [Mi 6 Global]
+Name is [None].
+Full line is [<span class="tab" id="t_481">Mi 6 China</span>]
+Name is [span].
+Full line is [Mi 6 China]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="content" id="content_t_480">
+<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<h2>Stable ROM</h2>]
+Name is [h2].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Full ROM pack</a>]
+Name is [a].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<li><span class="index"></span><a href="javascript:;">Older versions</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Older versions</a>]
+Name is [a].
+Full line is [Older versions]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_6" href="http://en.miui.com/a-232.html"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>]
+Name is [p].
+Full line is [Author: MIUI Official Team]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            ]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Size: 1.5G]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>]
+Name is [p].
+Full line is [Download MIUI Forum app to get the latest updates ]
+Name is [None].
+Full line is [<a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a>]
+Name is [a].
+Full line is [Download
+                            now]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Older versions]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Author: MIUI
+                    Official Team
+                ]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>]
+Name is [li].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="span_version">Version: V8.2.2.0.NCAMIEC</span>]
+Name is [span].
+Full line is [Version: V8.2.2.0.NCAMIEC]
+Name is [None].
+Full line is [<span class="span_size"> 1.5G </span>]
+Name is [span].
+Full line is [ 1.5G ]
+Name is [None].
+Full line is [<span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span>]
+Name is [span].
+Full line is [MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0]
+Name is [None].
+Full line is [<span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span>]
+Name is [span].
+Full line is [<a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a>]
+Name is [a].
+Full line is [Changelog]
+Name is [None].
+Full line is [<span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>]
+Name is [span].
+Full line is [<a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div style="clear:both;"></div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="phone_hd ">
+<span>Xiaomi Mi 6</span>
+<span class="tab" id="t_480">Mi 6 Global</span><span class="tab" id="t_481">Mi 6 China</span>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<span>Xiaomi Mi 6</span>]
+Name is [span].
+Full line is [Xiaomi Mi 6]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="tab" id="t_480">Mi 6 Global</span>]
+Name is [span].
+Full line is [Mi 6 Global]
+Name is [None].
+Full line is [<span class="tab" id="t_481">Mi 6 China</span>]
+Name is [span].
+Full line is [Mi 6 China]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="content" id="content_t_480">
+<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="block">
+<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>
+<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="appl">
+<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="tbn">
+<h2>Stable ROM</h2>
+<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<h2>Stable ROM</h2>]
+Name is [h2].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul>
+<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>
+<li><span class="index"></span><a href="javascript:;">Older versions</a></li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="current"><span class="index"></span><a href="javascript:;">Full ROM pack</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Full ROM pack</a>]
+Name is [a].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<li><span class="index"></span><a href="javascript:;">Older versions</a></li>]
+Name is [li].
+Full line is [<span class="index"></span>]
+Name is [span].
+Full line is [<a href="javascript:;">Older versions</a>]
+Name is [a].
+Full line is [Older versions]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list_div">
+<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>
+<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display:block;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>
+<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Full ROM pack</div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Full ROM pack]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="stable div_margin">
+<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>
+<a class="btn_6" href="http://en.miui.com/a-232.html"></a>
+<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="btn_5" style="background:none;position:relative;">
+<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_5" href="http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip" style="margin-top: 0"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<a class="btn_6" href="http://en.miui.com/a-232.html"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="supports">
+<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>
+<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Author: MIUI Official Team<span class="space"></span>Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            <span class="space"></span>Size: 1.5G</p>]
+Name is [p].
+Full line is [Author: MIUI Official Team]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Version: V8.5.1.0.NCAMIEG (MIUI8)
+                            ]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Size: 1.5G]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<p>Download MIUI Forum app to get the latest updates <a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a></p>]
+Name is [p].
+Full line is [Download MIUI Forum app to get the latest updates ]
+Name is [None].
+Full line is [<a class="flush_tool" href="http://api.en.miui.com/url/MIUIForum1.1.0" target="_blank">Download
+                            now</a>]
+Name is [a].
+Full line is [Download
+                            now]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="rom_list" style="display: none;">
+<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>
+<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>
+</div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [<div class="download_nv">Stable ROM<span>&gt;</span>Older versions<span class="space"></span>Author: MIUI
+                    Official Team
+                </div>]
+Name is [div].
+Full line is [Stable ROM]
+Name is [None].
+Full line is [<span>&gt;</span>]
+Name is [span].
+Full line is [>]
+Name is [None].
+Full line is [Older versions]
+Name is [None].
+Full line is [<span class="space"></span>]
+Name is [span].
+Full line is [Author: MIUI
+                    Official Team
+                ]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<ul class="version">
+<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>
+</ul>]
+Name is [ul].
+Full line is [
+]
+Name is [None].
+Full line is [<li class="li_2">
+<span class="span_version">Version: V8.2.2.0.NCAMIEC</span><span class="span_size"> 1.5G </span><span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span><span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span><span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>
+</li>]
+Name is [li].
+Full line is [
+]
+Name is [None].
+Full line is [<span class="span_version">Version: V8.2.2.0.NCAMIEC</span>]
+Name is [span].
+Full line is [Version: V8.2.2.0.NCAMIEC]
+Name is [None].
+Full line is [<span class="span_size"> 1.5G </span>]
+Name is [span].
+Full line is [ 1.5G ]
+Name is [None].
+Full line is [<span class="span_md5">MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0</span>]
+Name is [span].
+Full line is [MD5: 7f3f8ad7c8646ee5ce596ca51556c7c0]
+Name is [None].
+Full line is [<span class="span_log"><a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a></span>]
+Name is [span].
+Full line is [<a href="http://en.miui.com/thread-649169-1-1.html" target="_blank">Changelog</a>]
+Name is [a].
+Full line is [Changelog]
+Name is [None].
+Full line is [<span class="span_download"><a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a></span>]
+Name is [span].
+Full line is [<a href="http://bigota.d.miui.com/V8.2.2.0.NCAMIEC/miui_MI6Global_V8.2.2.0.NCAMIEC_7f3f8ad7c8_7.1.zip" id="rom_7f3f8ad7c8646ee5ce596ca51556c7c0" onmouseover="showMenu({'ctrlid':this.id, 'pos':'!'})" target="_blank"></a>]
+Name is [a].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
+Full line is [<div style="clear:both;"></div>]
+Name is [div].
+Full line is [
+]
+Name is [None].
+Full line is [
+]
+Name is [None].
