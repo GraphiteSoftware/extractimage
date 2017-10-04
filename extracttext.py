@@ -5,6 +5,7 @@ import sys
 from optparse import OptionParser
 import ericbase as eb
 import os.path
+import re
 
 # define global variables
 # options as globals
@@ -17,6 +18,7 @@ VERBOSE = '[STATUS] '
 
 def main():
     """main processing loop"""
+    global verbose, debug, test
     image_dict = {}
     verbose, debug, test, root, data, images, inputfile, outputfile = processargs()
     rw = ReadWrite(root, data, images, inputfile, outputfile)
@@ -58,6 +60,7 @@ class ReadWrite:
 
     def readinput(self):
         """read model and download url from json file"""
+        global verbose, debug, test
         json_file = os.path.join(self.root_path, self.url_list_path, self.input_json)
         json_fh = open(json_file, "r")
         data = json.load(json_fh)
@@ -68,6 +71,7 @@ class ReadWrite:
 
     def writeoutput(self, idout: dict):
         """write the image list dictionary to the json file"""
+        global verbose, debug, test
         if debug:
             print("{}{}".format(DEBUG, idout))
         json_file = os.path.join(self.root_path, self.url_list_path, self.output_json)
@@ -76,27 +80,75 @@ class ReadWrite:
         json_fh.close()
 
 
+global_id = ''
+china_id = ''
+processing = ''
+model_name = ''
+channel = ''
+
+
+def extractgroup(match):
+    """extract the group (index: 1) from the match object"""
+    if match is None:
+        return None
+    return match.group(1)
+
+
+def walker(soup, ld):
+    global global_id, china_id, processing, model_name, channel
+    global verbose, debug, test
+    if soup.name is not None:
+        for child in soup.children:
+            if child.name == 'span':
+                # print("<SPAN>: ", child.text, child.attrs)
+                if bool(re.search("Global$", child.text)):
+                    global_id = 'content_' + child.get('id')
+                    if debug:
+                        print("Found Global: " + child.text + " with id of: " + child.get('id'))
+                if bool(re.search("China", child.text)):
+                    china_id = 'content_' + child.get('id')
+                    if debug:
+                        print("Found China: " + child.text + " with id of: " + child.get('id'))
+
+            if child.name == 'div':
+                # print("<DIV>: ", child.text, child.attrs)
+                if 'id' in child.attrs:
+                    if child.get('id') == global_id:
+                        processing = "global"
+                    if child.get('id') == china_id:
+                        processing = "china"
+                if 'class' in child.attrs:
+                    for c in child.get('class'):
+                        if c == 'download_nv':
+                            channel = extractgroup(re.search(r"^(.*?) ", child.text))
+            if child.name == 'a':
+               if 'class' in child.attrs:
+                    # print("Found a class of:", child.get('class'))
+                    if 'btn_5' in child.get('class'):
+                        if verbose:
+                            print("Processing", channel, processing, model_name, "link of:", child.get('href'))
+                            ld[child.get('href')] = {'channel': channel, 'region': processing}
+            ld = walker(child, ld)
+    return ld
+
+
+
 def processline(pid: str, n: str):
+    """process the line by reading the html and extracting the information"""
+    global verbose, debug, test
     url = "http://en.miui.com/download-" + pid + ".html"
     if verbose:
         print(VERBOSE + "Name: {} -> {}".format(n, url))
-    line_dict = dict(url=url, images=[])
+    line_dict = dict(url=url, name=n)
 
     http = httplib2.Http()
     status, response = http.request(url)
 
     soup = BeautifulSoup(response, 'html.parser')
 
-    links = []
-
-    for link in soup.find_all('a'):
-        if link.get('class') == ['btn_5']:
-            links.append(link.get('href'))
-            if debug:
-                print(DEBUG + link.get('href'))
-    for t in soup.find_all(string=n):
-        print(VERBOSE + "Found span element with name of " + n + " and object of " + t)
-    line_dict['images'] = links
+    line_dict = walker(soup, line_dict)
+    if debug:
+        print(line_dict)
     return line_dict
 
 

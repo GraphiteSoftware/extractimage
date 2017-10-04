@@ -5,6 +5,7 @@ import sys
 import argparse
 import ericbase as eb
 import os.path
+import re
 
 # define global variables
 # options as globals
@@ -331,19 +332,62 @@ class ReadWrite:
         json_fh.close()
 
 
+global_id = ''
+china_id = ''
+processing = ''
+model_name = ''
+channel = ''
+
+
+def extractgroup(match):
+    """extract the group (index: 1) from the match object"""
+    if match is None:
+        return None
+    return match.group(1)
+
+
 def walker(soup):
+    global global_id, china_id, processing, model_name, channel
     if soup.name is not None:
         for child in soup.children:
             # process node
-            print(str(child.name) + ":" + str(type(child)))
-            if type(child) == soup.tag:
-                print("\tThis is a tag")
+            # if child.name is not None:
+            #     print(str(child.name) + ":" + str(type(child)))
+
+            if child.name == 'span':
+                # print("<SPAN>: ", child.text, child.attrs)
+                if bool(re.search("Global$", child.text)):
+                    print("Found Global: " + child.text + " with id of: " + child.get('id'))
+                    global_id = 'content_' + child.get('id')
+                if bool(re.search("China", child.text)):
+                    print("Found China: " + child.text + " with id of: " + child.get('id'))
+                    china_id = 'content_' + child.get('id')
+
+            if child.name == 'div':
+                # print("<DIV>: ", child.text, child.attrs)
+                if 'id' in child.attrs:
+                    print("Found an id of:", child.get('id'))
+                    if child.get('id') == global_id:
+                        print("Processing Global")
+                        processing = "global"
+                    if child.get('id') == china_id:
+                        print("Processing China")
+                        processing = "china"
+                if 'class' in child.attrs:
+                    for c in child.get('class'):
+                        if c == 'download_nv':
+                            channel = extractgroup(re.search(r"^(.*?) ", child.text))
+            if child.name == 'a':
+               if 'class' in child.attrs:
+                    # print("Found a class of:", child.get('class'))
+                    if 'btn_5' in child.get('class'):
+                        print("Processing", channel, processing, model_name, "link of:", child.get('href'))
             walker(child)
 
 
 
 def processline(pid: str, n: str):
-    global verbose, debug, test
+    global verbose, debug, test, model_name
     c = 0
     url = "http://en.miui.com/download-" + pid + ".html"
     if verbose:
@@ -353,34 +397,10 @@ def processline(pid: str, n: str):
     http = httplib2.Http()
     status, response = http.request(url)
 
-    soup = BeautifulSoup(htmltousesmall, 'html.parser')
+    soup = BeautifulSoup(htmltouse, 'html.parser')
+    model_name = n
     walker(soup)
 
-    sys.exit(0)
-
-    links = []
-
-    for link in soup.find_all('a'):
-        c += 1
-        for child in soup.recursiveChildGenerator():
-            print("Full line is [{}]".format(child))
-            name = getattr(child, "name", None)
-            print("Name is [{}].".format(name))
-            # attrid = getattr(child, "id", None)
-            # if name is not None:
-            #     print(name, attrid)
-            # elif not child.isspace():  # leaf node, don't print spaces
-            #     print(child)
-        # if verbose:
-        #     eb.displaycounter(["Processing link: "], [c])
-
-    #     if link.get('class') == ['btn_5']:
-    #         links.append(link.get('href'))
-    #         if debug:
-    #             print(DEBUG + link.get('href'))
-    # # for t in soup.find_all(string=n):
-    # #     print(VERBOSE + "Found span element with name of " + n + " and object of " + t)
-    # line_dict['images'] = links
     return line_dict
 
 

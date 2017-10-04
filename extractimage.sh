@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #IMAGE_SOURCE_DIR=/mnt/Software/Device/requested/R5.3-ss4-dev-405/
-IMAGE_SOURCE_DIR=/mnt/Software/Device/nightly/sscloud-nougat-1183/
+IMAGE_SOURCE_DIR=/Volume/passport/test
 #IMAGE_SOURCE_DIR=/mnt/Software/Device/requested/R5.3-ss4-dev-404/
 SYSTEM_DIR="system"
 SYSTEM_FACT_DIR="system.factory"
