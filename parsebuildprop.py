@@ -46,6 +46,11 @@ def main():
     rw.writeoutput(output_dict)
 
 
+
+    # app/Spaces*/Spaces*.apk
+    # priv-app/SpacesManagerService/Spaces*.apk
+
+
 class ReadWrite:
     def __init__(self, rootpath: str, imagepath: str, outfile: str):
         if rootpath is None:

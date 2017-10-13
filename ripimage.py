@@ -3,9 +3,9 @@ import sys
 from optparse import OptionParser
 import ericbase as eb
 import os.path
+import subprocess
 import re
 from urllib.request import urlretrieve
-
 
 # define global variables
 # options as globals
@@ -16,10 +16,10 @@ DEBUG = '[DEBUG] '
 VERBOSE = '[STATUS] '
 root, data, images, inputfile, outputfile = None, None, None, None, None
 
+
 def main():
     """main processing loop"""
     global verbose, debug, test, root, data, images, inputfile, outputfile
-    image_dict = {}
     verbose, debug, test, root, data, images, inputfile, outputfile = processargs()
     if test:
         print(VERBOSE, "Running in Test Mode")
@@ -39,9 +39,34 @@ def main():
             if debug:
                 print(rw.root_path, rw.image_path, file_name)
             file_path = os.path.join(rw.root_path, rw.image_path, file_name)
-            dl_message = "Downloading: " + i['image'] + " (" + model + ", " + i['region'] + ", " + i['channel'] +") to [" + file_path + "]"
+            dl_message = "Downloading: " + i['image'] + " (" + model + ", " + i['region'] + ", " + i[
+                'channel'] + ") to [" + file_path + "]"
             print(dl_message)
             # urlretrieve(i['image'], file_path, reporthook)
+            print("Done!")
+            suffix = file_path[-3:]
+            print("File is type {}".format(suffix))
+            outdir = model.replace(' ', '') + "-" + i['region'] + "-" + i['channel']
+            cmd = None
+            var1 = None
+            var2 = None
+            var3 = None
+            if suffix.lower() == 'zip':
+                print("using unzip")
+                cmd = 'unzip'
+                var1 = file_path
+                var2 = '-d'
+                var3 = outdir
+            else:
+                print("using tar xf")
+                cmd = 'tar'
+                var1 = 'xf'
+                var2 = file_path
+            # try:
+            #     subprocess.run('unzip', file_path)
+            # except OSError:
+            #     print("Got an OSError of ")
+            #     print(subprocess.CompletedProcess)
 
 
 def reporthook(blocknum, blocksize, totalsize):
@@ -81,9 +106,13 @@ class ReadWrite:
             self.output_json = outfile
         # check that the path is valid and exists
         if not os.path.exists(os.path.join(self.root_path, self.image_path)):
-            eb.printerror("Image directory does not exists or is not mounted: [path: " + os.path.join(self.root_path, self.image_path) + "]")
+            eb.printerror(
+                "Image directory does not exists or is not mounted: [path: " + os.path.join(self.root_path,
+                                                                                            self.image_path) + "]")
         if not os.path.exists(os.path.join(self.root_path, self.url_list_path)):
-            eb.printerror("Image directory does not exists or is not mounted: [path: " + os.path.join(self.root_path, self.url_list_path) + "]")
+            eb.printerror(
+                "Image directory does not exists or is not mounted: [path: " + os.path.join(self.root_path,
+                                                                                            self.url_list_path) + "]")
 
     def __str__(self) -> str:
         return "Input file is: " + os.path.join(self.root_path,
@@ -91,20 +120,20 @@ class ReadWrite:
                                                 self.input_json) + \
                "\nOutput file is: " + os.path.join(self.root_path,
                                                    self.url_list_path,
-                                                   self.output_json + \
-                "\nImage path is: " + os.path.join(self.root_path,
-                                                 self.image_path) )
+                                                   self.output_json +
+                                                   "\nImage path is: " + os.path.join(self.root_path,
+                                                                                      self.image_path))
 
     def readinput(self):
         """read model and download url from json file"""
         global verbose, debug, test
         json_file = os.path.join(self.root_path, self.url_list_path, self.input_json)
         json_fh = open(json_file, "r")
-        data = json.load(json_fh)
+        dtdata = json.load(json_fh)
         json_fh.close()
         if debug:
             print(DEBUG + "Got json file")
-        return data
+        return dtdata
 
     def writeoutput(self, idout: dict):
         """write the image list dictionary to the json file"""
@@ -129,12 +158,6 @@ def extractgroup(match):
     if match is None:
         return None
     return match.group(1)
-
-
-def processline(pid: str, n: str):
-    """process the line by reading the html and extracting the information"""
-    global verbose, debug, test
-    return 0
 
 
 def processargs():
@@ -167,12 +190,7 @@ def processargs():
         options.verbose = True
     return options.verbose, \
            options.debug, \
-           options.test, \
-           options.rootpath, \
-           options.datapath, \
-           options.imagepath, \
-           options.modelfile, \
-           options.outputfile
+           options.test, options.rootpath, options.datapath, options.imagepath, options.modelfile, options.outputfile
 
 
 if __name__ == '__main__':
