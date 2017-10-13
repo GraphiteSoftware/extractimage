@@ -1,0 +1,1070 @@
+{
+  "Mi A1": {
+    "url": "http://en.miui.com/download-333.html",
+    "name": "Mi A1",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/7.8.23/tissot_images_7.8.23_20170823.0000.00_7.1_61cf97d794.tgz",
+        "channel": "Stable",
+        "region": ""
+      }
+    ]
+  },
+  "Mi Note 3": {
+    "url": "http://en.miui.com/download-336.html",
+    "name": "Mi Note 3",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.11.0.NCHCNED/miui_MINote3_V8.5.11.0.NCHCNED_8fb3d377be_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.14/miui_MINote3_7.9.14_99174e313c_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi Note 5A": {
+    "url": "http://en.miui.com/download-332.html",
+    "name": "Redmi Note 5A",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.8.0.NDKCNED/miui_HMNote5A_V8.5.8.0.NDKCNED_dd3423776a_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMNote5A_7.9.21_b67c335204_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.9.0.NDFCNED/miui_HMNote5ALITE_V8.5.9.0.NDFCNED_9b89359441_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMNote5ALITE_7.9.21_67709bc94e_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Mi MIX 2": {
+    "url": "http://en.miui.com/download-334.html",
+    "name": "Mi MIX 2",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.4.0.NDECNEF/miui_MIMIX2_V8.5.4.0.NDECNEF_ac2de28209_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MIMIX2_7.9.22_85b021fe33_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi MIX": {
+    "url": "http://en.miui.com/download-317.html",
+    "name": "Xiaomi Mi MIX",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.4.0.MAHMIED/miui_MIMIXGlobal_V8.5.4.0.MAHMIED_0178011bcd_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.5.25/miui_MIMIXGlobal_7.5.25_0cc67107a6_6.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.4.0.MAHCNED/miui_MIMIX_V8.5.4.0.MAHCNED_960e70f1bb_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MIMIX_7.9.21_00b2a9bae7_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 6": {
+    "url": "http://en.miui.com/download-326.html",
+    "name": "Xiaomi Mi 6",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.NCAMIEG/miui_MI6Global_V8.5.1.0.NCAMIEG_7648f20aab_7.1.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MI6Global_7.9.22_431a70c634_7.1.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.5.0.NCACNEG/miui_MI6_V8.5.5.0.NCACNEG_c8c6a3ffa2_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.8/miui_MI6_7.9.8_37dd626680_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi Note 2": {
+    "url": "http://en.miui.com/download-316.html",
+    "name": "Xiaomi Mi Note 2",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.2.6.0.MADMIDL/miui_MINote2Global_V8.2.6.0.MADMIDL_66535b7bc9_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MINote2Global_7.9.22_50597b335d_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.4.0.MADCNED/miui_MINote2_V8.5.4.0.MADCNED_ef77aed810_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MINote2_7.9.21_e600abccc4_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 5c": {
+    "url": "http://en.miui.com/download-322.html",
+    "name": "Xiaomi Mi 5c",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.4.0.NCJCNED/miui_MI5C_V8.5.4.0.NCJCNED_5245cbd950_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.14/miui_MI5C_7.9.14_8be55d6b31_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 5X": {
+    "url": "http://en.miui.com/download-329.html",
+    "name": "Xiaomi Mi 5X",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.15.0.NDBCNED/miui_MI5X_V8.5.15.0.NDBCNED_054abb9b9c_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.14/miui_MI5X_7.9.14_7958e01106_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 5": {
+    "url": "http://en.miui.com/download-299.html",
+    "name": "Xiaomi Mi 5",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.3.0.NAAMIED/miui_MI5Global_V8.5.3.0.NAAMIED_0e30ccdfcd_7.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MI5Global_7.9.22_5f078d024a_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.3.0.NAACNED/miui_MI5_V8.5.3.0.NAACNED_530d8eea38_7.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MI5_7.9.21_2d92cbe8a5_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi Note Pro": {
+    "url": "http://en.miui.com/download-273.html",
+    "name": "Xiaomi Mi Note Pro",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.2.1.0.LXHCNDL/miui_MINotePro_V8.2.1.0.LXHCNDL_3edfda7fb2_5.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MINotePro_7.9.21_cbffab19f4_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi Pad": {
+    "url": "http://en.miui.com/download-229.html",
+    "name": "Xiaomi Mi Pad",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V7.3.1.0.KXFMIDD/miui_MIPADGlobal_V7.3.1.0.KXFMIDD_0d8dcf2bc3_4.4.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/6.5.27/miui_MIPADGlobal_6.5.27_fa27d00f0d_4.4.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.KXFCNED/miui_MIPAD_V8.5.1.0.KXFCNED_f3bfc7f0b7_4.4.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MIPAD_7.9.21_00576ed213_4.4.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 3": {
+    "url": "http://en.miui.com/download-101.html",
+    "name": "Xiaomi Mi 3",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.1.6.0.MXDMIDI/miui_MI3WMI4WGlobal_V8.1.6.0.MXDMIDI_5984da4175_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MI3WMI4WGlobal_7.9.22_88c23144d0_6.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.MXDCNED/miui_MI3WMI4W_V8.5.2.0.MXDCNED_02bf001b1a_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MI3WMI4W_7.9.21_395fb82c28_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi Pad 3": {
+    "url": "http://en.miui.com/download-325.html",
+    "name": "Xiaomi Mi Pad 3",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.2.8.0.NCICNEB/miui_MIPAD3_V8.2.8.0.NCICNEB_19fecdbacc_7.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MIPAD3_7.9.21_062a51a8b1_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi Max 2": {
+    "url": "http://en.miui.com/download-328.html",
+    "name": "Xiaomi Mi Max 2",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.8.0.NDDMIED/miui_MIMAX2Global_V8.5.8.0.NDDMIED_499bce8999_7.1.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MIMAX2Global_7.9.22_d24da81bcf_7.1.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.15.0.NDDCNED/miui_MIMAX2_V8.5.15.0.NDDCNED_e3cdac0028_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MIMAX2_7.9.21_5276df1d7e_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 2/2S": {
+    "url": "http://en.miui.com/download-2.html",
+    "name": "Xiaomi Mi 2/2S",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.1.3.0.LXAMIDI/miui_MI2Global_V8.1.3.0.LXAMIDI_1d761534cc_5.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.15/miui_MI2Global_7.9.15_1fbb769768_5.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.LXACNED/miui_MI2_V8.5.1.0.LXACNED_3160429db0_5.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MI2_7.9.21_d51b7e5145_5.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 4i": {
+    "url": "http://en.miui.com/download-263.html",
+    "name": "Xiaomi Mi 4i",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.1.5.0.LXIMIDI/miui_MI4iGlobal_V8.1.5.0.LXIMIDI_b6d019203d_5.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.15/miui_MI4iGlobal_7.9.15_7c2582a8ff_5.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V7.5.1.0.LXICNDE/miui_MI4i_V7.5.1.0.LXICNDE_1b4aa66aae_5.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/6.3.24/miui_MI4i_6.3.24_7e2a13d788_5.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 4c": {
+    "url": "http://en.miui.com/download-293.html",
+    "name": "Xiaomi Mi 4c",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.NXKCNED/miui_MI4c_V8.5.1.0.NXKCNED_2851a16b0d_7.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MI4c_7.9.21_64695b8806_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 5s Plus": {
+    "url": "http://en.miui.com/download-315.html",
+    "name": "Xiaomi Mi 5s Plus",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.MBGMIED/miui_MI5SPlusGlobal_V8.5.2.0.MBGMIED_e942753d36_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MI5SPlusGlobal_7.9.22_eebff9102c_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.4.0.MBGCNED/miui_MI5SPlus_V8.5.4.0.MBGCNED_3f798bed5e_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MI5SPlus_7.9.21_c1465a3344_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi Pad 2": {
+    "url": "http://en.miui.com/download-296.html",
+    "name": "Xiaomi Mi Pad 2",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.LACCNED/miui_MIPAD2_V8.5.1.0.LACCNED_d866c72f01_5.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MIPAD2_7.9.21_a559fd1ba7_5.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 4S": {
+    "url": "http://en.miui.com/download-300.html",
+    "name": "Xiaomi Mi 4S",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.NAJCNED/miui_MI4s_V8.5.2.0.NAJCNED_5a46cb458a_7.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MI4s_7.9.21_a7d98d5384_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi Max/Prime": {
+    "url": "http://en.miui.com/download-302.html",
+    "name": "Xiaomi Mi Max/Prime",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.NBCMIED/miui_MIMAXGlobal_V8.5.1.0.NBCMIED_4941ccb20b_7.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MIMAXGlobal_7.9.22_6a6b75230f_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.NBDMIED/miui_MIMAX652Global_V8.5.1.0.NBDMIED_ae0dbe525e_7.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MIMAX652Global_7.9.22_ba89c20a17_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.2.3.0.MBCCNDL/miui_MIMAX_V8.2.3.0.MBCCNDL_09dd6b2ce1_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MIMAX_7.9.21_eaee37532e_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.2.3.0.MBDCNDL/miui_MIMAX652_V8.2.3.0.MBDCNDL_e96f2aaeac_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MIMAX652_7.9.21_94de291030_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 4": {
+    "url": "http://en.miui.com/download-240.html",
+    "name": "Xiaomi Mi 4",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.1.6.0.MXDMIDI/miui_MI3WMI4WGlobal_V8.1.6.0.MXDMIDI_5984da4175_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MI3WMI4WGlobal_7.9.22_88c23144d0_6.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.MXDCNED/miui_MI3WMI4W_V8.5.2.0.MXDCNED_02bf001b1a_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MI3WMI4W_7.9.21_395fb82c28_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 5s": {
+    "url": "http://en.miui.com/download-314.html",
+    "name": "Xiaomi Mi 5s",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.3.0.MAGMIED/miui_MI5SGlobal_V8.5.3.0.MAGMIED_06d5d5e5bd_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MI5SGlobal_7.9.22_15c2478270_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.4.0.MAGCNED/miui_MI5S_V8.5.4.0.MAGCNED_884b0c1fa8_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MI5S_7.9.21_0723f78eb7_7.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi Note": {
+    "url": "http://en.miui.com/download-262.html",
+    "name": "Xiaomi Mi Note",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.1.4.0.MXEMIDI/miui_MINoteGlobal_V8.1.4.0.MXEMIDI_3bf6649228_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_MINoteGlobal_7.9.22_0bf5919e3a_6.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.MXECNED/miui_MINote_V8.5.1.0.MXECNED_566bef05b5_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_MINote_7.9.21_32e4981bf4_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 4": {
+    "url": "http://en.miui.com/download-318.html",
+    "name": "Redmi 4",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.MAMMIED/miui_HM4XGlobal_V8.5.2.0.MAMMIED_973da51a2e_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HM4XGlobal_7.9.22_58521b50be_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.1.5.0.MCECNDI/miui_HM4_V8.1.5.0.MCECNDI_7379d10c7b_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HM4_7.9.21_b082ae74fe_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 4 Prime": {
+    "url": "http://en.miui.com/download-320.html",
+    "name": "Redmi 4 Prime",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.3.0.MBEMIED/miui_HM4ProGlobal_V8.5.3.0.MBEMIED_925ac66d66_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.MBECNED/miui_HM4Pro_V8.5.1.0.MBECNED_eddeb9036e_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HM4Pro_7.9.21_343b59353c_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi Note 4": {
+    "url": "http://en.miui.com/download-309.html",
+    "name": "Redmi Note 4",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.3.0.MBFMIED/miui_HMNote4Global_V8.5.3.0.MBFMIED_87dc83627e_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HMNote4Global_7.9.22_a338303e02_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.8.0.NCFMIED/miui_HMNote4XGlobal_V8.5.8.0.NCFMIED_9bbf8ced00_7.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.6.8/miui_HMNote4XGlobal_7.6.8_b596d79b05_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.6.0.MBFCNED/miui_HMNote4_V8.5.6.0.MBFCNED_4824360074_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.6.10/miui_HMNote4_7.6.10_9078fae181_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 4A": {
+    "url": "http://en.miui.com/download-319.html",
+    "name": "Redmi 4A",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.5.0.MCCMIED/miui_HM4AGlobal_V8.5.5.0.MCCMIED_f00203ec21_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.5.25/miui_HM4AGlobal_7.5.25_e1ab2dce54_6.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.3.0.MCCCNED/miui_HM4A_V8.5.3.0.MCCCNED_4a3dc630ee_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HM4A_7.9.21_9e30349e76_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi Note 4X": {
+    "url": "http://en.miui.com/download-321.html",
+    "name": "Redmi Note 4X",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.8.0.NCFMIED/miui_HMNote4XGlobal_V8.5.8.0.NCFMIED_9bbf8ced00_7.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.6.8/miui_HMNote4XGlobal_7.6.8_b596d79b05_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.6.0.MCFCNED/miui_HMNote4X_V8.5.6.0.MCFCNED_13e146f407_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.6.8/miui_HMNote4X_7.6.8_342b325949_7.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.6.0.MBFCNED/miui_HMNote4_V8.5.6.0.MBFCNED_4824360074_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.6.10/miui_HMNote4_7.6.10_9078fae181_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 4X": {
+    "url": "http://en.miui.com/download-323.html",
+    "name": "Redmi 4X",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.MAMMIED/miui_HM4XGlobal_V8.5.2.0.MAMMIED_973da51a2e_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HM4XGlobal_7.9.22_58521b50be_7.1.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.4.0.MAMCNED/miui_HM4X_V8.5.4.0.MAMCNED_2c588c2b0f_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HM4X_7.9.21_31a1506e2a_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 2A": {
+    "url": "http://en.miui.com/download-37.html",
+    "name": "Xiaomi Mi 2A",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/JLB54.0/miui_MI2A_JLB54.0_48f53d8c3d_4.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/4.12.5/miui_MI2A_4.12.5_9a4dd2b79d_4.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/6.3.31/miui_MI2ABeta_6.3.31_88eb2b1e2f_4.4.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi Note Prime": {
+    "url": "http://en.miui.com/download-297.html",
+    "name": "Redmi Note Prime",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.KHKMIED/miui_HMNote1SGlobal_V8.5.2.0.KHKMIED_fdea83e717_4.4.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HMNote1SGlobal_7.9.22_ceed252db9_4.4.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.2.1.0.KHKCNDL/miui_HMNote1S_V8.2.1.0.KHKCNDL_75bd15bb39_4.4.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMNote1S_7.9.21_0dd1b29db5_4.4.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi Note 3": {
+    "url": "http://en.miui.com/download-301.html",
+    "name": "Redmi Note 3",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.6.0.MHOMIED/miui_HMNote3ProGlobal_V8.5.6.0.MHOMIED_afe9fee927_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HMNote3ProGlobal_7.9.22_e1fd953695_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.3.0.MHOCNED/miui_HMNote3Pro_V8.5.3.0.MHOCNED_d604d11330_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMNote3Pro_7.9.21_63212056c1_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.MHRMIED/miui_HMNote3ProtwGlobal_V8.5.2.0.MHRMIED_47a5130438_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HMNote3ProtwGlobal_7.9.22_824634247b_6.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.LHNCNED/miui_HMNote3_V8.5.2.0.LHNCNED_29e2402d7c_5.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMNote3_7.9.21_030ce3935e_5.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 3S/Prime/3X": {
+    "url": "http://en.miui.com/download-303.html",
+    "name": "Redmi 3S/Prime/3X",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.3.0.MALMIED/miui_HM3SGlobal_V8.5.3.0.MALMIED_0c033af794_6.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HM3SGlobal_7.9.22_efacbd21de_6.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.1.5.0.MALCNDI/miui_HM3S_V8.1.5.0.MALCNDI_c8f45a19bd_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HM3S_7.9.21_04fb06acb4_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 1": {
+    "url": "http://en.miui.com/download-82.html",
+    "name": "Redmi 1",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/JHBMIBL31.0/miui_HMWGlobal_JHBMIBL31.0_1d174f5254_4.2.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V7.3.1.0.KHBCNDD/miui_HMW_V7.3.1.0.KHBCNDD_49c9fc7ce6_4.4.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMW_7.9.21_860f6068ed_4.4.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 2/Prime": {
+    "url": "http://en.miui.com/download-261.html",
+    "name": "Redmi 2/Prime",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.LHJMIED/miui_HM2XWCProGlobal_V8.5.2.0.LHJMIED_d9f708af01_5.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.15/miui_HM2XWCProGlobal_7.9.15_cfc35b036a_5.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.KHJMIED/miui_HM2XWCGlobal_V8.5.1.0.KHJMIED_8431a7dade_4.4.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HM2XWCGlobal_7.9.22_aa81a8b8e1_4.4.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.2.3.0.KHJCNDL/miui_HM2XWC_V8.2.3.0.KHJCNDL_49b241e766_4.4.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HM2XWC_7.9.21_7cc100d4ea_4.4.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.2.5.0.LHJCNDL/miui_HM2XWCPro_V8.2.5.0.LHJCNDL_f12953c628_5.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HM2XWCPro_7.9.21_f7ba311dfc_5.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi Note 2": {
+    "url": "http://en.miui.com/download-274.html",
+    "name": "Redmi Note 2",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.LHMMIED/miui_HMNote2Global_V8.5.1.0.LHMMIED_7375e06057_5.0.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.15/miui_HMNote2Global_7.9.15_91490ab5f7_5.0.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.LHMCNED/miui_HMNote2_V8.5.2.0.LHMCNED_3cfefc9baf_5.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMNote2_7.9.21_16d84c7710_5.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 3/Prime": {
+    "url": "http://en.miui.com/download-298.html",
+    "name": "Redmi 3/Prime",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.2.0.LAIMIED/miui_HM3Global_V8.5.2.0.LAIMIED_0fda4e3669_5.1.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.15/miui_HM3Global_7.9.15_45f53a21cd_5.1.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.1.1.0.LAICNDI/miui_HM3_V8.1.1.0.LAICNDI_e0001b8f26_5.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HM3_7.9.21_26a3d8147f_5.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi Pro": {
+    "url": "http://en.miui.com/download-304.html",
+    "name": "Redmi Pro",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.1.2.0.MHQCNDI/miui_HMPro_V8.1.2.0.MHQCNDI_7a17cf4e05_6.0.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.6.10/miui_HMPro_7.6.10_23a1e657f8_6.0.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Xiaomi Mi 1/1S": {
+    "url": "http://en.miui.com/download-1.html",
+    "name": "Xiaomi Mi 1/1S",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/JMACNBL18.0/miui_Mioneplus_JMACNBL18.0_6b0e616a48_4.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/4.12.5/miui_Mioneplus_4.12.5_3d5e0ee650_4.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi Note ": {
+    "url": "http://en.miui.com/download-218.html",
+    "name": "Redmi Note ",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V7.3.1.0.KHDMIDD/miui_HMNoteWGlobal_V7.3.1.0.KHDMIDD_8a4af52616_4.4.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/6.10.20/miui_HMNoteWGlobal_6.10.20_2be5b478ad_4.4.zip",
+        "channel": "Developer",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.2.1.0.KHIMIDL/miui_HMNoteLTEGlobal_V8.2.1.0.KHIMIDL_196c30cbf8_4.4.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.22/miui_HMNoteLTEGlobal_7.9.22_3fb105a99f_4.4.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.2.3.0.KHDCNDL/miui_HMNoteW_V8.2.3.0.KHDCNDL_fc69ee5d7b_4.4.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMNoteW_7.9.21_731e965b48_4.4.zip",
+        "channel": "Developer",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/V8.5.1.0.KHICNED/miui_HMNoteLTE_V8.5.1.0.KHICNED_9ec3f7e1dc_4.4.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.21/miui_HMNoteLTE_7.9.21_74eb4623a6_4.4.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  },
+  "Redmi 1S": {
+    "url": "http://en.miui.com/download-226.html",
+    "name": "Redmi 1S",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.2.1.0.KHCMIDL/miui_HM1SWCGlobal_V8.2.1.0.KHCMIDL_0e98e6e5ff_4.4.zip",
+        "channel": "Stable",
+        "region": "global"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.1.19/miui_HM1SWCGlobal_7.1.19_592be9d974_4.4.zip",
+        "channel": "Developer",
+        "region": "global"
+      }
+    ]
+  }
+}

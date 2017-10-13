@@ -1,0 +1,29 @@
+{
+  "Mi A1": {
+    "url": "http://en.miui.com/download-333.html",
+    "name": "Mi A1",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/7.8.23/tissot_images_7.8.23_20170823.0000.00_7.1_61cf97d794.tgz",
+        "channel": "Stable",
+        "region": ""
+      }
+    ]
+  },
+  "Mi Note 3": {
+    "url": "http://en.miui.com/download-336.html",
+    "name": "Mi Note 3",
+    "images": [
+      {
+        "image": "http://bigota.d.miui.com/V8.5.11.0.NCHCNED/miui_MINote3_V8.5.11.0.NCHCNED_8fb3d377be_7.1.zip",
+        "channel": "Stable",
+        "region": "china"
+      },
+      {
+        "image": "http://bigota.d.miui.com/7.9.14/miui_MINote3_7.9.14_99174e313c_7.1.zip",
+        "channel": "Developer",
+        "region": "china"
+      }
+    ]
+  }
+}
