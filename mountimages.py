@@ -1,5 +1,5 @@
 import json
-import sys
+import magic
 from optparse import OptionParser
 import ericbase as eb
 import os.path
@@ -19,23 +19,35 @@ patternimg = '*.img'
 patterndat = '*.dat'
 
 
+# app/Spaces*/Spaces*.apk
+# priv-app/SpacesManagerService/Spaces*.apk
+
+
 def main():
     """main processing loop"""
     global verbose, debug, test, root, images, output_dict
     verbose, debug, test, root, images = processargs()
+    if debug:
+        print("Verbose is {}, Debug is {} and Test is {}". format(verbose, debug, test))
     if test:
         print(VERBOSE, "Running in Test Mode")
     rw = ReadWrite(root, images)
     # d = rw.readinput()
     if debug:
         print(str(rw))
-        print(verbose, debug, test, rw.root_path, rw.image_path)
-    filelist = [f for f in os.listdir(os.path.join(rw.root_path, rw.image_path)) if os.path.isfile(f)]
-    for file in os.listdir(os.path.join(rw.root_path, rw.image_path)):
+    filelist = getfilelist(os.path.join(rw.root_path, rw.image_path))
+    for f in filelist:
+        print(f)
+        print(magic.from_file(f))
+
+
+def getfilelist(filepath) -> list:
+    fl = []
+    for file in os.listdir(filepath):
         # print("Checking: ", file)
-        if fnmatch.fnmatch(file, patternimg):
+        if fnmatch.fnmatch(file, patternimg) or fnmatch.fnmatch(file, patterndat):
             # print("Matches Image")
-            fullname = os.path.join(rw.root_path, rw.image_path, file)
+            fullname = os.path.join(filepath, file)
             if fnmatch.fnmatch(file, '._*'):
                 # skip these file
                 # print("Skipping")
@@ -45,32 +57,11 @@ def main():
                 # skip zero byte file
                 # print("Skipping")
                 continue
-            if verbose:
-                print("Got img file: {}".format(file))
-            if file == 'boot.img':
-                print("boot.img: Skipping")
-            else:
-                processfile(fullname)
-        if fnmatch.fnmatch(file, patterndat):
-            # print("Matches Data")
-            fullname = os.path.join(rw.root_path, rw.image_path, file)
-            if fnmatch.fnmatch(file, '._*'):
-                # skip these file
-                # print("Skipping")
+            if file == 'boot.img' or file == 'sys.img':
+                # skip special images
                 continue
-            fileinfo = os.stat(fullname)
-            if fileinfo.st_size == 0:
-                # skip zero byte file
-                # print("Skipping")
-                continue
-            if verbose:
-                print("Got dat file: {}".format(file))
-            processfile(fullname)
-
-
-
-                # app/Spaces*/Spaces*.apk
-    # priv-app/SpacesManagerService/Spaces*.apk
+            fl.append(os.path.join(filepath, file))
+    return fl
 
 
 def processfile(f: str):
