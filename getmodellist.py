@@ -21,10 +21,31 @@ def main():
     global verbose, debug, test
     verbose, debug, test, root, data, outputfile = processargs()
     rw = ReadWrite(root, data, outputfile)
-    model_dict = {}
-    for line in rw.readinput():
-        model_dict[line['name']] = processline(line['pid'], line['name'])
-    rw.writeoutput(model_dict)
+    p = re.compile('var phones =(.*?);')
+    phonelist = []
+    foundmatch = False
+
+    http = httplib2.Http()
+    status, response = http.request("http://en.miui.com/download.html")
+    soup = BeautifulSoup(response, 'html.parser')
+
+    data = soup.find_all("script")
+    for i, d in enumerate(data):
+        # print(d.text)
+        vardata = extractgroup(re.search(r"var phones =(.*?);", d.text))
+        if vardata is None:
+            print("No match on element", i)
+            continue
+        else:
+            print("Got a match on element:", i)
+            phonelist = json.loads(vardata)
+            foundmatch = True
+            break
+    if foundmatch:
+        print("\n\n\nPhone list is: \n", phonelist)
+    else:
+        print("Did not find the phone list")
+    rw.writeoutput(phonelist)
 
 
 class ReadWrite:
@@ -47,8 +68,8 @@ class ReadWrite:
                                                 self.url_list_path,
                                                 self.output_json)
 
-    def writeoutput(self, idout: dict):
-        """write the model list dictionary to the json file"""
+    def writeoutput(self, idout: list):
+        """write the model list to the json file"""
         global verbose, debug, test
         if debug:
             print("{}{}".format(DEBUG, idout))
