@@ -6,6 +6,7 @@ from optparse import OptionParser
 import ericbase as eb
 import os.path
 import re
+import datetime
 
 # define global variables
 # options as globals
@@ -19,9 +20,8 @@ VERBOSE = '[STATUS] '
 def main():
     """main processing loop"""
     global verbose, debug, test
-    verbose, debug, test, root, data, outputfile = processargs()
+    verbose, debug, test, root, data, outputfile, xmonly = processargs()
     rw = ReadWrite(root, data, outputfile)
-    p = re.compile('var phones =(.*?);')
     phonelist = []
     foundmatch = False
 
@@ -34,18 +34,25 @@ def main():
         # print(d.text)
         vardata = extractgroup(re.search(r"var phones =(.*?);", d.text))
         if vardata is None:
-            print("No match on element", i)
+            if debug:
+                print("No match on element", i)
             continue
         else:
-            print("Got a match on element:", i)
+            if debug:
+                print("Got a match on element:", i)
             phonelist = json.loads(vardata)
             foundmatch = True
             break
     if foundmatch:
-        print("\n\n\nPhone list is: \n", phonelist)
+        if debug:
+            print("\n\n\nPhone list is: \n", phonelist)
     else:
         print("Did not find the phone list")
-    rw.writeoutput(phonelist)
+    if xmonly:
+        xmlist = extractxm(phonelist)
+        rw.writeoutput(xmlist)
+    else:
+        rw.writeoutput(phonelist)
 
 
 class ReadWrite:
@@ -58,8 +65,10 @@ class ReadWrite:
             self.url_list_path = 'xiaomi_data'
         else:
             self.url_list_path = datapath
+        d = datetime.datetime.now()
+        dString = d.strftime("%Y%m%d")
         if outfile is None:
-            self.output_json = 'modellist.json'
+            self.output_json = 'modellist-' + dString + '.json'
         else:
             self.output_json = outfile
 
@@ -79,11 +88,17 @@ class ReadWrite:
         json_fh.close()
 
 
-global_id = ''
-china_id = ''
-processing = ''
-model_name = ''
-channel = ''
+def extractxm(ph: list) -> list:
+    xmlist = []
+    for ent in ph:
+        if debug:
+            if ent['type'] == "1":
+                print("Xiaomi device", ent['name'])
+            else:
+                print("Got model type", ent['type'], ent['name'])
+        if ent['type'] == '1':
+            xmlist.append(ent)
+    return xmlist
 
 
 def extractgroup(match):
@@ -91,64 +106,6 @@ def extractgroup(match):
     if match is None:
         return None
     return match.group(1)
-
-
-def walker(soup, ld):
-    global global_id, china_id, processing, model_name, channel
-    global verbose, debug, test
-    if soup.name is not None:
-        for child in soup.children:
-            if child.name == 'span':
-                # print("<SPAN>: ", child.text, child.attrs)
-                if bool(re.search("Global$", child.text)):
-                    global_id = 'content_' + child.get('id')
-                    if debug:
-                        print("Found Global: " + child.text + " with id of: " + child.get('id'))
-                if bool(re.search("China", child.text)):
-                    china_id = 'content_' + child.get('id')
-                    if debug:
-                        print("Found China: " + child.text + " with id of: " + child.get('id'))
-
-            if child.name == 'div':
-                # print("<DIV>: ", child.text, child.attrs)
-                if 'id' in child.attrs:
-                    if child.get('id') == global_id:
-                        processing = "global"
-                    if child.get('id') == china_id:
-                        processing = "china"
-                if 'class' in child.attrs:
-                    for c in child.get('class'):
-                        if c == 'download_nv':
-                            channel = extractgroup(re.search(r"^(.*?) ", child.text))
-            if child.name == 'a':
-                if 'class' in child.attrs:
-                    # print("Found a class of:", child.get('class'))
-                    if 'btn_5' in child.get('class'):
-                        if verbose:
-                            print("Processing", channel, processing, model_name, "link of:", child.get('href'))
-                            temp_d = {'image': child.get('href'), 'channel': channel, 'region': processing}
-                            ld['images'].append(temp_d)
-            ld = walker(child, ld)
-    return ld
-
-
-def processline(pid: str, n: str):
-    """process the line by reading the html and extracting the information"""
-    global verbose, debug, test
-    url = "http://en.miui.com/download-" + pid + ".html"
-    if verbose:
-        print(VERBOSE + "Name: {} -> {}".format(n, url))
-    line_dict = dict(url=url, name=n, images=[])
-
-    http = httplib2.Http()
-    status, response = http.request(url)
-
-    soup = BeautifulSoup(response, 'html.parser')
-
-    line_dict = walker(soup, line_dict)
-    if debug:
-        print(line_dict)
-    return line_dict
 
 
 def processargs():
@@ -163,6 +120,8 @@ def processargs():
                       help="Print out debug messages during processing")
     parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
                       help="Use test file instead of full file list")
+    parser.add_option("-x", "--xiaomi", dest="xiaomionly", action="store_true", default=False,
+                      help="Only extract Xiaomi (type=1) entries")
     parser.add_option("-r", "--root", dest="rootpath", default=None,
                       help="Root path to use for files", metavar="ROOTPATH")
     parser.add_option("-a", "--data", dest="datapath", default=None,
@@ -174,7 +133,7 @@ def processargs():
     # required options checks
     if options.debug:
         options.verbose = True
-    return options.verbose, options.debug, options.test, options.rootpath, options.datapath, options.outputfile
+    return options.verbose, options.debug, options.test, options.rootpath, options.datapath, options.outputfile, options.xiaomionly
 
 
 if __name__ == '__main__':
