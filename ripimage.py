@@ -6,6 +6,7 @@ import os.path
 import subprocess
 import re
 from urllib.request import urlretrieve
+import time
 
 # define global variables
 # options as globals
@@ -20,7 +21,7 @@ root, data, images, inputfile, outputfile = None, None, None, None, None
 def main():
     """main processing loop"""
     global verbose, debug, test, root, data, images, inputfile, outputfile
-    verbose, debug, test, root, data, images, inputfile, outputfile = processargs()
+    verbose, debug, test, root, data, images, inputfile, outputfile, force = processargs()
     if test:
         print(VERBOSE, "Running in Test Mode")
         inputfile = 'urllist_test.json'
@@ -31,7 +32,7 @@ def main():
     if debug:
         print(str(rw))
     d = rw.readinput()
-    print(verbose, debug, test, rw.root_path, rw.url_list_path, rw.image_path, rw.input_json, rw.output_json)
+    # TODO add in a check for how many dowloads and a count as the downloads progress - total completed
     for line in d:
         model = d[line]['name']
         for i in d[line]['images']:
@@ -39,34 +40,20 @@ def main():
             if debug:
                 print(rw.root_path, rw.image_path, file_name)
             file_path = os.path.join(rw.root_path, rw.image_path, file_name)
-            dl_message = "Downloading: " + i['image'] + " (" + model + ", " + i['region'] + ", " + i[
-                'channel'] + ") to [" + file_path + "]"
-            print(dl_message)
-            # urlretrieve(i['image'], file_path, reporthook)
-            print("Done!")
-            suffix = file_path[-3:]
-            print("File is type {}".format(suffix))
-            outdir = model.replace(' ', '') + "-" + i['region'] + "-" + i['channel']
-            cmd = None
-            var1 = None
-            var2 = None
-            var3 = None
-            if suffix.lower() == 'zip':
-                print("using unzip")
-                cmd = 'unzip'
-                var1 = file_path
-                var2 = '-d'
-                var3 = outdir
+            if os.path.isfile(file_path) and not force:
+                if verbose:
+                    print("[STATUS] File exists. Not downloading. [{}]".format(file_path))
             else:
-                print("using tar xf")
-                cmd = 'tar'
-                var1 = 'xf'
-                var2 = file_path
-            # try:
-            #     subprocess.run('unzip', file_path)
-            # except OSError:
-            #     print("Got an OSError of ")
-            #     print(subprocess.CompletedProcess)
+                if verbose:
+                    dl_message = "[STATUS] Downloading: " + i['image'] + " (" + model + ", " + i['region'] + ", " + i[
+                        'channel'] + ") to [" + file_path + "]"
+                    print(dl_message)
+                start = time.time()
+                urlretrieve(i['image'], file_path, reporthook)
+                end = time.time()
+                print("This download took {0:.2f} seconds".format(end - start))
+            d[line]['file'] = file_path
+    rw.writeoutput(d)
 
 
 def reporthook(blocknum, blocksize, totalsize):
@@ -101,7 +88,7 @@ class ReadWrite:
         else:
             self.input_json = infile
         if outfile is None:
-            self.output_json = 'imageprop.json'
+            self.output_json = 'urllist_updated.json'
         else:
             self.output_json = outfile
         # check that the path is valid and exists
@@ -173,6 +160,8 @@ def processargs():
                       help="Print out debug messages during processing")
     parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
                       help="Use test file instead of full file list")
+    parser.add_option("-f", "--force", dest="force", action="store_true", default=False,
+                      help="Force overwrite of existing files")
     parser.add_option("-r", "--root", dest="rootpath", default=None,
                       help="Root path to use for files and images", metavar="ROOTPATH")
     parser.add_option("-a", "--data", dest="datapath", default=None,
@@ -190,7 +179,8 @@ def processargs():
         options.verbose = True
     return options.verbose, \
            options.debug, \
-           options.test, options.rootpath, options.datapath, options.imagepath, options.modelfile, options.outputfile
+           options.test, \
+           options.rootpath, options.datapath, options.imagepath, options.modelfile, options.outputfile, options.force
 
 
 if __name__ == '__main__':

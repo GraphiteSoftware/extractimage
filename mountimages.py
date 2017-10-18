@@ -4,20 +4,22 @@ from optparse import OptionParser
 import ericbase as eb
 import os.path
 import fnmatch
+import re
 
 # define global variables
 # options as globals
 verbose = False
 debug = False
 test = False
-DEBUG = '[DEBUG] '
-VERBOSE = '[STATUS] '
+all = False
+DEBUG = '[DEBUG]'
+VERBOSE = '[STATUS]'
+WARNING = '[WARNING]'
 root, data, images = None, None, None
 re_datetime = r"(.*?)=(.*)"
 output_dict = {}
 patternimg = '*.img'
 patterndat = '*.dat'
-
 
 # app/Spaces*/Spaces*.apk
 # priv-app/SpacesManagerService/Spaces*.apk
@@ -25,20 +27,48 @@ patterndat = '*.dat'
 
 def main():
     """main processing loop"""
-    global verbose, debug, test, root, images, output_dict
-    verbose, debug, test, root, images = processargs()
+    global verbose, debug, test, root, images, output_dict, all
+    verbose, debug, test, root, images, data, link, all = processargs()
     if debug:
-        print("Verbose is {}, Debug is {} and Test is {}". format(verbose, debug, test))
+        print(DEBUG, "\nVerbose: {}\nDebug: {}\nTest: {}\nAll: {}".format(verbose, debug, test, all))
     if test:
-        print(VERBOSE, "Running in Test Mode")
-    rw = ReadWrite(root, images)
-    # d = rw.readinput()
+        print(WARNING, "Running in Test Mode")
+    rw = ReadWrite(root, images, data, link)
+    d = rw.readinput()
     if debug:
-        print(str(rw))
-    filelist = getfilelist(os.path.join(rw.root_path, rw.image_path))
-    for f in filelist:
-        print(f)
-        print(magic.from_file(f))
+        print(DEBUG, str(rw))
+    modelstoprocess = len(d)
+    for idx, line in enumerate(d):
+        if verbose:
+            print(VERBOSE, "Processing model {} of {}".format(idx + 1, modelstoprocess))
+        model = d[line]['name']
+        for i in d[line]['images']:
+            file_name = extractgroup(re.search(r"http:\/\/.*\/(.*)", i['image']))
+            file_path = os.path.join(rw.root_path, rw.image_path, file_name)
+            if os.path.isfile(file_path):
+                # Process all or only stable
+                if all:
+                    # process this
+                    processfile(file_path, model, i['region'], i['channel'])
+                else:
+                    # only process stable
+                    if i['channel'].lower() == 'stable':
+                        processfile(file_path, model, i['region'], i['channel'])
+                    else:
+                        if debug:
+                            print(DEBUG, "Not a Stable channel - SKIPPING", file_path)
+            else:
+                if verbose:
+                    dl_message = "Could not find file: [" + file_path + "]" + model + ", " + i['region'] + ", " + \
+                                 i['channel']
+                    print(WARNING, dl_message)
+
+    # TODO unzip each zip file into a controlled directory
+    # TODO search for the system.new.dat in each of the controlled directories
+    # TODO extract and mount the image
+    # TODO get the build.props file from the image
+    # TODO unmount and do the next one
+
 
 
 def getfilelist(filepath) -> list:
@@ -64,51 +94,83 @@ def getfilelist(filepath) -> list:
     return fl
 
 
-def processfile(f: str):
-    print("Processing: " + f)
+def processfile(f: str, m: str, r: str, c: str):
+    """processing the downloaded zip/tar file"""
+    global verbose, debug, test, all
+    if debug:
+        dl_message = "Found and processing: " + m + ", " + r + ", " + \
+                     c + " File: [" + f + "]"
+        print(DEBUG, dl_message)
+
+    file_type = magic.from_file(f)
+    if debug:
+        print(DEBUG, "\t[{}] is type [{}]".format(f, file_type))
+    if file_type[-5:] == '(JAR)':
+        # zip file - use unzip
+        print("File is ZIP format. Using unzip")
+        if verbose:
+            print("Processing:", f, "(" + file_type + ")")
+
+    if file_type[:4] == 'gzip':
+        # tgz file - we don't do those yet (only one in the file)
+        print("File is Tar GZ format. SKIPPING:", f)
     return 0
 
 
-
 class ReadWrite:
-    def __init__(self, rootpath: str, imagepath: str):
+    def __init__(self, rootpath: str, imagepath: str, datapath: str, infile: str):
         if rootpath is None:
             self.root_path = '/Volumes/passport'
         else:
             self.root_path = rootpath
         if imagepath is None:
-            self.image_path = 'test'
+            self.image_path = 'xiaomi_images'
         else:
             self.image_path = imagepath
+        if datapath is None:
+            self.url_list_path = 'xiaomi_data'
+        else:
+            self.url_list_path = datapath
+        if infile is None:
+            self.input_json = 'linklist.json'
+        else:
+            self.input_json = infile
+
         # check that the path is valid and exists
         if not os.path.exists(os.path.join(self.root_path, self.image_path)):
             eb.printerror(
                 "Image directory does not exist: [path: " + os.path.join(self.root_path,
-                                                                                           self.image_path) + "]")
+                                                                         self.image_path) + "]")
+        if not os.path.exists(os.path.join(self.root_path, self.url_list_path, self.input_json)):
+            eb.printerror(
+                "Link file does not exist or is not mounted: [path: " + os.path.join(self.root_path,
+                                                                                    self.url_list_path,
+                                                                                    self.input_json) + "]")
 
     def __str__(self) -> str:
-        return "Input path is: " + os.path.join(self.root_path, self.image_path,)
+        return "Input path is: " + os.path.join(self.root_path, self.image_path, )
 
     def readinput(self):
-        """read build prop file"""
+        """read a file"""
         global verbose, debug, test
-        # bp_file = os.path.join(self.root_path, self.image_path, self.buildprop_file)
-        # bp_fh = open(bp_file, "r")
-        # dtdata = bp_fh.readlines()
-        # bp_fh.close()
+        json_file = os.path.join(self.root_path, self.url_list_path, self.input_json)
+        json_fh = open(json_file, "r")
+        dtdata = json.load(json_fh)
+        json_fh.close()
         if debug:
-            print(DEBUG + "Got build props file")
-        return 0
+            print(DEBUG, "Got json file")
+        return dtdata
 
     def writeoutput(self, idout: dict):
         """write the build props to the json file"""
         global verbose, debug, test
-        # if debug:
-        #     print("{}{}".format(DEBUG, idout))
-        # json_file = os.path.join(self.root_path, self.output_json)
-        # json_fh = open(json_file, "w")
-        # json.dump(idout, json_fh)
-        # json_fh.close()
+        if debug:
+            print("{}{}".format(DEBUG, idout))
+        json_file = os.path.join(self.root_path, 'props.json')
+        json_fh = open(json_file, "w")
+        json.dump(idout, json_fh)
+        json_fh.close()
+
 
 def extractgroups(match):
     """extract all of the matching groups from the regex object"""
@@ -116,6 +178,12 @@ def extractgroups(match):
         return None
     return match.groups()
 
+
+def extractgroup(match):
+    """extract the group (index: 1) from the match object"""
+    if match is None:
+        return None
+    return match.group(1)
 
 
 def processargs():
@@ -130,16 +198,23 @@ def processargs():
                       help="Print out debug messages during processing")
     parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
                       help="Use test file instead of full file list")
+    parser.add_option("-a", "--all", dest="all", action="store_true", default=False,
+                      help="Extract all images. Default is only Stable")
     parser.add_option("-r", "--root", dest="rootpath", default=None,
                       help="Root path to use for files and images", metavar="ROOTPATH")
-    parser.add_option("-i", "--image", dest="imagepath", default=None,
-                      help="Path to use for the image", metavar="IMAGEPATH")
+    parser.add_option("-f", "--data", dest="datapath", default=None,
+                      help="Path to use for files", metavar="DATAPATH")
+    parser.add_option("-i", "--images", dest="imagepath", default=None,
+                      help="Path to use for images", metavar="IMAGEPATH")
+    parser.add_option("-l", "--links", dest="linkfile", default=None,
+                      help="JSON file with image URL data", metavar="LINKFILE")
     options, args = parser.parse_args()
 
     # required options checks
     if options.debug:
         options.verbose = True
-    return options.verbose, options.debug, options.test, options.rootpath, options.imagepath
+    return options.verbose, options.debug, options.test, options.rootpath, options.imagepath, options.datapath, \
+           options.linkfile, options.all
 
 
 if __name__ == '__main__':
