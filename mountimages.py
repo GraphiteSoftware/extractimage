@@ -5,6 +5,7 @@ import ericbase as eb
 import os.path
 import fnmatch
 import re
+import subprocess
 
 # define global variables
 # options as globals
@@ -20,6 +21,7 @@ re_datetime = r"(.*?)=(.*)"
 output_dict = {}
 patternimg = '*.img'
 patterndat = '*.dat'
+patternversion = r"V(\d*\.\d*\.\d*\.\d*)"
 
 # app/Spaces*/Spaces*.apk
 # priv-app/SpacesManagerService/Spaces*.apk
@@ -45,30 +47,11 @@ def main():
         for i in d[line]['images']:
             file_name = extractgroup(re.search(r"http:\/\/.*\/(.*)", i['image']))
             file_path = os.path.join(rw.root_path, rw.image_path, file_name)
-            if os.path.isfile(file_path):
-                # Process all or only stable
-                if all:
-                    # process this
-                    processfile(file_path, model, i['region'], i['channel'])
-                else:
-                    # only process stable
-                    if i['channel'].lower() == 'stable':
-                        processfile(file_path, model, i['region'], i['channel'])
-                    else:
-                        if debug:
-                            print(DEBUG, "Not a Stable channel - SKIPPING", file_path)
-            else:
-                if verbose:
-                    dl_message = "Could not find file: [" + file_path + "]" + model + ", " + i['region'] + ", " + \
-                                 i['channel']
-                    print(WARNING, dl_message)
-
-    # TODO unzip each zip file into a controlled directory
-    # TODO search for the system.new.dat in each of the controlled directories
-    # TODO extract and mount the image
-    # TODO get the build.props file from the image
-    # TODO unmount and do the next one
-
+            pf = ProcessImage(file_path, model, i['region'], i['channel'], all)
+            pf.processfile()
+        if test:
+            if idx > 1:
+                break
 
 
 def getfilelist(filepath) -> list:
@@ -94,27 +77,76 @@ def getfilelist(filepath) -> list:
     return fl
 
 
-def processfile(f: str, m: str, r: str, c: str):
-    """processing the downloaded zip/tar file"""
-    global verbose, debug, test, all
-    if debug:
-        dl_message = "Found and processing: " + m + ", " + r + ", " + \
-                     c + " File: [" + f + "]"
-        print(DEBUG, dl_message)
+class ProcessImage:
+    def __init__(self, filepath: str, model: str, region: str, channel: str, all: bool):
+        self.file = filepath
+        self.model = model
+        self.region = region
+        self.channel = channel
+        self.processall = all
 
-    file_type = magic.from_file(f)
-    if debug:
-        print(DEBUG, "\t[{}] is type [{}]".format(f, file_type))
-    if file_type[-5:] == '(JAR)':
-        # zip file - use unzip
-        print("File is ZIP format. Using unzip")
-        if verbose:
-            print("Processing:", f, "(" + file_type + ")")
+    def __str__(self) -> str:
+        return "File: " + self.file + "\nModel: " + self.model + "\nRegion: " + "\nChannel: " + self.channel
 
-    if file_type[:4] == 'gzip':
-        # tgz file - we don't do those yet (only one in the file)
-        print("File is Tar GZ format. SKIPPING:", f)
-    return 0
+    def checkfile(self) -> bool:
+        if os.path.isfile(self.file):
+            # Process all or only stable
+            if self.processall:
+                return True
+            if self.channel.lower() == 'stable':
+                return True
+        else:
+            if verbose:
+                dl_message = "Could not find file: [" + self.file + "]" + self.model + ", " + self.region + ", " + \
+                             self.channel
+                print(WARNING, dl_message)
+        return False
+
+    def makedirname(self) -> str:
+        version = extractgroup(re.search(patternversion, self.file))
+        if version is None:
+            return self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')
+        else:
+            return self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')+version
+
+    def buildzipcommand(self, d: str) -> list:
+        return ['unzip', self.file, '-d', d]
+
+    def processfile(self):
+        """processing the downloaded zip/tar file"""
+        global verbose, debug, test
+        if self.checkfile():
+            if debug:
+                dl_message = "Found and processing: " + self.model + ", " + self.region + ", " + \
+                             self.channel + " File: [" + self.file + "]"
+                print(DEBUG, dl_message)
+
+            file_type = magic.from_file(self.file)
+            if debug:
+                print(DEBUG, "\t[{}] is type [{}]".format(self.file, file_type))
+            if file_type[:4] == 'gzip':
+                # tgz file - we don't do those yet (only one in the file)
+                if verbose:
+                    print(VERBOSE, "File is Tar GZ format. SKIPPING:", self.file)
+
+            if file_type[-5:] == '(JAR)':
+                # zip file - use unzip
+                dirname = self.makedirname()
+                if verbose:
+                    print("Processing:", self.file, "(" + file_type + ") as ZIP into [" + dirname + "]")
+                if os.path.isfile(dirname):
+                    # directory exists, probably extracted already, skip
+                    if verbose:
+                        print(VERBOSE, "Extraction directory for", self.file, "already exists. SKIPPING")
+                else:
+                    unzipcmd = self.buildzipcommand(dirname)
+                    subprocess.run(unzipcmd)
+                    # TODO search for the system.new.dat in each of the controlled directories
+                    # TODO extract and mount the image
+                    # TODO get the build.props file from the image
+                    # TODO unmount and do the next one
+
+        return 0
 
 
 class ReadWrite:
