@@ -81,6 +81,8 @@ class ProcessImage:
     def __init__(self, root: str, imgdir: str, extractdir: str, filename: str, model: str, region: str, channel: str, all: bool):
         self.file = os.path.join(root, imgdir, filename)
         self.extractpath = os.path.join(root, extractdir)
+        self.mountpath = os.path.join(root, 'tmp')
+        self.propspath = os.path.join(root, 'extracted_props')
         self.model = model
         self.region = region
         self.channel = channel
@@ -88,6 +90,7 @@ class ProcessImage:
         self.sysdatname = 'system.new.dat'
         self.transferlistname = 'system.transfer.list'
         self.sysimgname = 'system.img'
+        self.buildpropname = 'build.prop'
 
     def __str__(self) -> str:
         return "File: " + self.file + "\nModel: " + self.model + "\nRegion: " + "\nChannel: " + self.channel
@@ -113,10 +116,20 @@ class ProcessImage:
             d = self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')
         else:
             d = self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')+version
-        return os.path.join(self.extractpath, d)
+        return d
 
-    def buildzipcommand(self, d: str) -> list:
-        return ['unzip', self.file, '-d', d]
+    def buildcommand(self, type: str, src: str, dest: str) -> list:
+        cmd = []
+        if type == 'unzip':
+            cmd = ['unzip', src, '-d', dest]
+        elif type == 'mount':
+            cmd = ['ext4fuse', src, dest]
+        elif type == 'unmount':
+            cmd = ['umount', dest]
+        elif type == 'copy':
+            cmd = ['cp', src, dest]
+        print("COMMAND is:", cmd)
+        return cmd
 
     def processfile(self):
         """processing the downloaded zip/tar file"""
@@ -137,7 +150,7 @@ class ProcessImage:
 
             if file_type[-5:] == '(JAR)':
                 # zip file - use unzip
-                dirname = self.makedirname()
+                dirname = os.path.join(self.extractpath, self.makedirname())
                 if verbose:
                     print("Processing:", self.file, "(" + file_type + ") as ZIP into [" + dirname + "]")
                 if os.path.isdir(dirname):
@@ -145,32 +158,46 @@ class ProcessImage:
                     if verbose:
                         print(VERBOSE, "Extraction directory [" + dirname + "] for", self.file, "already exists. SKIPPING")
                 else:
-                    unzipcmd = self.buildzipcommand(dirname)
-                    subprocess.run(unzipcmd)
+                    subprocess.run(self.buildcommand('unzip', self.file, dirname))
 
                 # now we either have an existing directory with the image file or we have just unzipped the image file
                 sysdatpath = os.path.join(dirname, self.sysdatname)
                 transferlistpath = os.path.join(dirname, self.transferlistname)
                 outputpath = os.path.join(dirname, self.sysimgname)
-                if os.path.isfile(sysdatpath):
-                    if verbose:
-                        print(VERBOSE, "Found", self.sysdatname, "in", dirname)
-                    # check that we have the transfer list
-                    if os.path.isfile(transferlistpath):
-                        # all good
-                        simg = SDat2Img(transferlistpath, sysdatpath, outputpath)
-                        simg.sdat2img_main()
+                if not os.path.isfile(outputpath):
+                    # system image does not exist - extract it
+                    if os.path.isfile(sysdatpath):
+                        if verbose:
+                            print(VERBOSE, "Found", self.sysdatname, "in", dirname)
+                        # check that we have the transfer list
+                        if os.path.isfile(transferlistpath):
+                            # all good
+                            simg = SDat2Img(transferlistpath, sysdatpath, outputpath)
+                            simg.sdat2img_main()
+                        else:
+                            # something is wrong
+                            print(ERROR, "Could not find", transferlistpath)
                     else:
                         # something is wrong
-                        print(ERROR, "Could not find", transferlistpath)
+                        print(ERROR, "Could not find", sysdatpath)
                 else:
-                    # something is wrong
-                    print(ERROR, "Could not find", sysdatpath)
-
-        # TODO mount the image
-        # TODO get the build.props file from the image
-        # TODO unmount and do the next one
-
+                    # system img already exists - process it
+                    if verbose:
+                        print(VERBOSE, "Found an existing", outputpath, "looking for", self.buildpropname, "in that file")
+                # now we have a known image file
+                subprocess.run(self.buildcommand('mount', outputpath, self.mountpath))
+                buildpropspath =  os.path.join(self.mountpath, self.buildpropname)
+                bpoutputname = self.makedirname() + '.' + self.buildpropname
+                bpoutputpath = os.path.join(self.propspath, bpoutputname)
+                if os.path.isfile(buildpropspath):
+                    # found the build props file
+                    subprocess.run(self.buildcommand('copy', buildpropspath, bpoutputpath))
+                    if verbose:
+                        print(VERBOSE, "Found and copied", buildpropspath, "to", bpoutputpath)
+                else:
+                    print(ERROR, "Did not find", buildpropspath)
+                # unmount the image
+                subprocess.run(self.buildcommand('unmount', '', self.mountpath))
         return 0
 
 
