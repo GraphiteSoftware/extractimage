@@ -6,6 +6,7 @@ import os.path
 import fnmatch
 import re
 import subprocess
+import sys, os, errno
 
 # define global variables
 # options as globals
@@ -16,6 +17,7 @@ all = False
 DEBUG = '[DEBUG]'
 VERBOSE = '[STATUS]'
 WARNING = '[WARNING]'
+ERROR = '[ERROR]'
 root, data, images = None, None, None
 re_datetime = r"(.*?)=(.*)"
 output_dict = {}
@@ -46,12 +48,10 @@ def main():
         model = d[line]['name']
         for i in d[line]['images']:
             file_name = extractgroup(re.search(r"http:\/\/.*\/(.*)", i['image']))
-            file_path = os.path.join(rw.root_path, rw.image_path, file_name)
-            pf = ProcessImage(file_path, model, i['region'], i['channel'], all)
+            pf = ProcessImage(rw.root_path, rw.image_path, rw.extractpath, file_name, model, i['region'], i['channel'], all)
             pf.processfile()
         if test:
-            if idx > 1:
-                break
+            break
 
 
 def getfilelist(filepath) -> list:
@@ -78,12 +78,15 @@ def getfilelist(filepath) -> list:
 
 
 class ProcessImage:
-    def __init__(self, filepath: str, model: str, region: str, channel: str, all: bool):
-        self.file = filepath
+    def __init__(self, root: str, imgdir: str, extractdir: str, filename: str, model: str, region: str, channel: str, all: bool):
+        self.file = os.path.join(root, imgdir, filename)
+        self.extractpath = os.path.join(root, extractdir)
         self.model = model
         self.region = region
         self.channel = channel
         self.processall = all
+        self.sysdatname = 'system.new.dat'
+        self.sysimgname = 'system.img'
 
     def __str__(self) -> str:
         return "File: " + self.file + "\nModel: " + self.model + "\nRegion: " + "\nChannel: " + self.channel
@@ -104,17 +107,19 @@ class ProcessImage:
 
     def makedirname(self) -> str:
         version = extractgroup(re.search(patternversion, self.file))
+        d = ''
         if version is None:
-            return self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')
+            d = self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')
         else:
-            return self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')+version
+            d = self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')+version
+        return os.path.join(self.extractpath, d)
 
     def buildzipcommand(self, d: str) -> list:
         return ['unzip', self.file, '-d', d]
 
     def processfile(self):
         """processing the downloaded zip/tar file"""
-        global verbose, debug, test
+        global verbose, debug, test, sysdatname, sysimgname
         if self.checkfile():
             if debug:
                 dl_message = "Found and processing: " + self.model + ", " + self.region + ", " + \
@@ -134,17 +139,27 @@ class ProcessImage:
                 dirname = self.makedirname()
                 if verbose:
                     print("Processing:", self.file, "(" + file_type + ") as ZIP into [" + dirname + "]")
-                if os.path.isfile(dirname):
-                    # directory exists, probably extracted already, skip
+                if os.path.isdir(dirname):
+                    # directory exists, probably extracted already, skip to find system.new.dat
                     if verbose:
-                        print(VERBOSE, "Extraction directory for", self.file, "already exists. SKIPPING")
+                        print(VERBOSE, "Extraction directory [" + dirname + "] for", self.file, "already exists. SKIPPING")
                 else:
                     unzipcmd = self.buildzipcommand(dirname)
                     subprocess.run(unzipcmd)
-                    # TODO search for the system.new.dat in each of the controlled directories
-                    # TODO extract and mount the image
-                    # TODO get the build.props file from the image
-                    # TODO unmount and do the next one
+
+                # now we either have an existing directory with the image file or we have just unzipped the image file
+                sysimgpath = os.path.join(dirname, self.sysdatname)
+                if os.path.isfile(sysimgpath):
+                    if verbose:
+                        print(VERBOSE, "Found", self.sysdatname, "in", dirname)
+                             
+                else:
+                    # something is wrong
+                    print(ERROR, "Could not find", sysimgpath)
+                # TODO search for the system.new.dat in each of the controlled directories
+                # TODO extract and mount the image
+                # TODO get the build.props file from the image
+                # TODO unmount and do the next one
 
         return 0
 
@@ -167,6 +182,7 @@ class ReadWrite:
             self.input_json = 'linklist.json'
         else:
             self.input_json = infile
+        self.extractpath = 'extracted_images'
 
         # check that the path is valid and exists
         if not os.path.exists(os.path.join(self.root_path, self.image_path)):
@@ -247,6 +263,113 @@ def processargs():
         options.verbose = True
     return options.verbose, options.debug, options.test, options.rootpath, options.imagepath, options.datapath, \
            options.linkfile, options.all
+
+
+class SDat2Img:
+    def __init__(self, transfer: str, datafile: str, outputfile: str):
+        self.__version__ = '1.0'
+        self.TRANSFER_LIST_FILE = transfer
+        self.NEW_DATA_FILE = datafile
+        self.OUTPUT_IMAGE_FILE = outputfile
+        self.BLOCK_SIZE = 4096
+
+    def rangeset(self, src):
+        src_set = src.split(',')
+        num_set = [int(item) for item in src_set]
+        if len(num_set) != num_set[0] + 1:
+            print(ERROR, 'Error on parsing following data to rangeset:\n%s' % src)
+            sys.exit(1)
+
+        return tuple([(num_set[i], num_set[i + 1]) for i in range(1, len(num_set), 2)])
+
+    def parse_transfer_list_file(self, path):
+        trans_list = open(self.TRANSFER_LIST_FILE, 'r')
+
+        # First line in transfer list is the version number
+        version = int(trans_list.readline())
+
+        # Second line in transfer list is the total number of blocks we expect to write
+        new_blocks = int(trans_list.readline())
+
+        if version >= 2:
+            # Third line is how many stash entries are needed simultaneously
+            trans_list.readline()
+            # Fourth line is the maximum number of blocks that will be stashed simultaneously
+            trans_list.readline()
+
+        # Subsequent lines are all individual transfer commands
+        commands = []
+        for line in trans_list:
+            line = line.split(' ')
+            cmd = line[0]
+            if cmd in ['erase', 'new', 'zero']:
+                commands.append([cmd, self.rangeset(line[1])])
+            else:
+                # Skip lines starting with numbers, they are not commands anyway
+                if not cmd[0].isdigit():
+                    print('Command "%s" is not valid.' % cmd)
+                    trans_list.close()
+                    sys.exit(1)
+
+        trans_list.close()
+        return version, new_blocks, commands
+
+    def sdat2img_main(self):
+        version, new_blocks, commands = self.parse_transfer_list_file(self.TRANSFER_LIST_FILE)
+
+        if version == 1:
+            print('Android Lollipop 5.0 detected!\n')
+        elif version == 2:
+            print('Android Lollipop 5.1 detected!\n')
+        elif version == 3:
+            print('Android Marshmallow 6.x detected!\n')
+        elif version == 4:
+            print('Android Nougat 7.x / Oreo 8.x detected!\n')
+        else:
+            print('Unknown Android version!\n')
+
+        # Don't clobber existing files to avoid accidental data loss
+        try:
+            output_img = open(self.OUTPUT_IMAGE_FILE, 'wb')
+        except IOError as e:
+            if e.errno == errno.EEXIST:
+                print('Error: the output file "{}" already exists'.format(e.filename))
+                print('Remove it, rename it, or choose a different file name.')
+                sys.exit(e.errno)
+            else:
+                raise
+
+        new_data_file = open(self.NEW_DATA_FILE, 'rb')
+        all_block_sets = [i for command in commands for i in command[1]]
+        max_file_size = max(pair[1] for pair in all_block_sets) * self.BLOCK_SIZE
+
+        for command in commands:
+            if command[0] == 'new':
+                for block in command[1]:
+                    begin = block[0]
+                    end = block[1]
+                    block_count = end - begin
+                    print('Copying {} blocks into position {}...'.format(block_count, begin))
+
+                    # Position output file
+                    output_img.seek(begin * self.BLOCK_SIZE)
+
+                    # Copy one block at a time
+                    while (block_count > 0):
+                        output_img.write(new_data_file.read(self.BLOCK_SIZE))
+                        block_count -= 1
+            else:
+                print('Skipping command %s...' % command[0])
+
+        # Make file larger if necessary
+        if (output_img.tell() < max_file_size):
+            output_img.truncate(max_file_size)
+
+        output_img.close()
+        new_data_file.close()
+        print('Done! Output image: %s' % os.path.realpath(output_img.name))
+
+
 
 
 if __name__ == '__main__':
