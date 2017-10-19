@@ -86,6 +86,7 @@ class ProcessImage:
         self.channel = channel
         self.processall = all
         self.sysdatname = 'system.new.dat'
+        self.transferlistname = 'system.transfer.list'
         self.sysimgname = 'system.img'
 
     def __str__(self) -> str:
@@ -148,18 +149,27 @@ class ProcessImage:
                     subprocess.run(unzipcmd)
 
                 # now we either have an existing directory with the image file or we have just unzipped the image file
-                sysimgpath = os.path.join(dirname, self.sysdatname)
-                if os.path.isfile(sysimgpath):
+                sysdatpath = os.path.join(dirname, self.sysdatname)
+                transferlistpath = os.path.join(dirname, self.transferlistname)
+                outputpath = os.path.join(dirname, self.sysimgname)
+                if os.path.isfile(sysdatpath):
                     if verbose:
                         print(VERBOSE, "Found", self.sysdatname, "in", dirname)
-                             
+                    # check that we have the transfer list
+                    if os.path.isfile(transferlistpath):
+                        # all good
+                        simg = SDat2Img(transferlistpath, sysdatpath, outputpath)
+                        simg.sdat2img_main()
+                    else:
+                        # something is wrong
+                        print(ERROR, "Could not find", transferlistpath)
                 else:
                     # something is wrong
-                    print(ERROR, "Could not find", sysimgpath)
-                # TODO search for the system.new.dat in each of the controlled directories
-                # TODO extract and mount the image
-                # TODO get the build.props file from the image
-                # TODO unmount and do the next one
+                    print(ERROR, "Could not find", sysdatpath)
+
+        # TODO mount the image
+        # TODO get the build.props file from the image
+        # TODO unmount and do the next one
 
         return 0
 
