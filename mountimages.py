@@ -177,9 +177,11 @@ class ProcessImage:
                         else:
                             # something is wrong
                             print(ERROR, "Could not find", transferlistpath)
+                            return 1
                     else:
                         # something is wrong
                         print(ERROR, "Could not find", sysdatpath)
+                        return 2
                 else:
                     # system img already exists - process it
                     if verbose:
