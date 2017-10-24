@@ -14,16 +14,27 @@ ERROR = '[ERROR]'
 
 
 def getfilelist(filepath) -> list:
+    shpfiles = []
     patternprop = r"classes.dex"
     if not os.path.isdir(filepath):
         eb.printerror("APK directory does not exist or is not mounted: " + filepath)
     else:
-        shpfiles = []
         for dirpath, subdirs, files in os.walk(filepath):
             for x in files:
                 if x == patternprop:
                     shpfiles.append(os.path.join(dirpath, x))
-    return shpfiles
+    dexlist = []
+    for x in shpfiles:
+        rec = {}
+        p1, f = os.path.split(x)
+        p2, apk = os.path.split(p1)
+        p3, ver = os.path.split(p2)
+        rec['version'] = ver
+        rec['apk'] = apk
+        rec['path'] = x
+        rec['hash'] = None
+        dexlist.append(rec)
+    return dexlist
 
 
 class Flags:
@@ -99,7 +110,7 @@ class ReadWrite:
             print(DEBUG, "Got classes.dex file")
         return dtdata
 
-    def writeoutput(self, idout: dict):
+    def writeoutput(self, idout: list):
         """write the build props to the json file"""
         if Flags.debug:
             print("{}{}".format(DEBUG, idout))
@@ -122,16 +133,22 @@ def main():
     output_dict = {}
     rw = ReadWrite(Flags.configsettings['root'], Flags.configsettings['output'])
 
-    files = getfilelist(Flags.configsettings['root'])
-    print(files)
-    for f in files:
-        print(os.path.split(f))
-
+    dexfiles = getfilelist(Flags.configsettings['root'])
+    hashlist = []
     hasher = hashlib.md5()
-    with open('urllist.json', 'rb') as afile:
-        buf = afile.read()
-        hasher.update(buf)
-    print(hasher.hexdigest())
+    for r in dexfiles:
+        hashrec = {}
+        with open(r['path'], 'rb') as afile:
+            buf = afile.read()
+            hasher.update(buf)
+        h = str(hasher.hexdigest())
+        hashrec[h] = {}
+        hashrec[h]['version'] = r['version']
+        hashrec[h]['apk'] = r['apk']
+        hashlist.append(hashrec)
+        if Flags.verbose:
+            print(VERBOSE, hashrec)
+    rw.writeoutput(hashlist)
 
 
 if __name__ == '__main__':

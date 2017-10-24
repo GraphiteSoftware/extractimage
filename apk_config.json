@@ -2,6 +2,7 @@
   "root": "/Volumes/passport",
   "images": "xiaomi_images",
   "data": "xiaomi_data",
+  "links": "linklist-20171017.json",
   "mount": "tmp",
   "extractimages": "extracted_images",
   "extractprops": "extracted_props",
