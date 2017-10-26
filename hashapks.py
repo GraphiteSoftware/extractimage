@@ -41,17 +41,17 @@ def main():
               "Flags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
                   Flags.verbose, Flags.debug, Flags.test, Flags.config, Flags.configsettings))
     rw = ReadWrite(Flags.configsettings['root'], Flags.configsettings['images'], Flags.configsettings['data'], Flags.configsettings['links'])
-    for dirpath, subdirs, files in os.walk(os.path.join(Flags.configsettings['root'], Flags.configsettings['extractimages'])):
-        for x in files:
-            if x == "system.img":
-                subprocess.run(buildcommand('mount', os.path.join(dirpath, x), os.path.join(Flags.configsettings['root'], Flags.configsettings['mount'])))
-                apklist = getfilelist(os.path.join(Flags.configsettings['root'], Flags.configsettings['mount']))
-                rec = {}
-                p1, f = os.path.split(dirpath)
-                imgfields = splitfilename(f)
-                for apk in apklist:
-                    subprocess.run(buildcommand('copy', apk, dirpath))
-                subprocess.run(buildcommand('unmount', '', os.path.join(Flags.configsettings['root'], Flags.configsettings['mount'])))
+    apklist = getfilelist(os.path.join(Flags.configsettings['root'], Flags.configsettings['extractimages']))
+    for apk in apklist:
+        subprocess.run(buildcommand('simpleunzip', apk, ''))
+        dirpath, f = os.path.split(apk)
+        p1, d1 = os.path.split(dirpath)
+        imgfields = splitfilename(d1)
+        for dirpath, subdirs, files in os.walk(dirpath):
+            for x in files:
+                if x == "classes.dex":
+                    dexhash = gethash(x)
+                    print(imgfields, f, dexhash)
 
 def gethash(f):
     hasher = hashlib.md5()
@@ -73,13 +73,15 @@ def splitfilename(f: str) -> dict:
 def buildcommand(type: str, src: str, dest: str) -> list:
     cmd = []
     if type == 'unzip':
-        cmd = ['unzip', src, '-d', dest]
+        cmd = ['unzip', '-oq', src, '-d', dest]
     elif type == 'mount':
         cmd = ['ext4fuse', src, dest]
     elif type == 'unmount':
         cmd = ['umount', dest]
     elif type == 'copy':
         cmd = ['cp', src, dest]
+    elif type == 'simpleunzip':
+        cmd = ['unzip', '-oq', src]
     print("COMMAND is:", cmd)
     return cmd
 
@@ -89,7 +91,7 @@ def getfilelist(filepath) -> list:
     shpfiles = []
     patternspaces = r"Spaces*.apk"
     if not os.path.isdir(filepath):
-        eb.printerror("Image directory does not exist or is not mounted: " + filepath)
+        eb.printerror("Extracted image directory does not exist: " + filepath)
     else:
         for dirpath, subdirs, files in os.walk(filepath):
             for x in files:
