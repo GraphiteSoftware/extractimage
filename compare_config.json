@@ -1,0 +1,6 @@
+{
+  "root": ".",
+  "link1": "linklist-20171017.json",
+  "link2": "imglist-20171026.json",
+  "output": "listdiff-20171027.json"
+}
