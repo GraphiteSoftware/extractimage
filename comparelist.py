@@ -1,20 +1,13 @@
 import json
-import magic
 from optparse import OptionParser
 import ericbase as eb
 import os.path
-import fnmatch
 import re
-import subprocess
-import sys, os, errno
-import hashlib
+import sys
+import os
 
 # define global variables
 # options as globals
-verbose = False
-debug = False
-test = False
-all = False
 DEBUG = '[DEBUG]'
 VERBOSE = '[STATUS]'
 WARNING = '[WARNING]'
@@ -25,9 +18,6 @@ output_dict = {}
 patternimg = '*.img'
 patterndat = '*.dat'
 patternversion = r"V(\d*\.\d*\.\d*\.\d*)"
-
-# app/Spaces*/Spaces*.apk
-# priv-app/SpacesManagerService/Spaces*.apk
 
 
 def main():
@@ -49,28 +39,82 @@ def main():
     for item in l1.data:
         if item in l2.data:
             if l1.data[item] == l2.data[item]:
-                print("Found", item, "in", Flags.configsettings['link2'], "- it is the same")
+                if Flags.debug:
+                    print("Found", item, "in", Flags.configsettings['link2'], "- it is the same")
                 o1.data[item] = l1.data[item]
                 o1.data[item]['status'] = 'unchanged'
             else:
-                print("Found", item, "in", Flags.configsettings['link2'], "- it is changed")
+                if Flags.debug:
+                    print("Found", item, "in", Flags.configsettings['link2'], "- it is changed")
                 olditem = str(item) + '-old'
                 newitem = str(item) + '-new'
                 o1.data[olditem] = l1.data[item]
                 o1.data[olditem]['status'] = 'changed'
                 o1.data[newitem] = l2.data[item]
                 o1.data[newitem]['status'] = 'changed'
+                if Flags.verbose:
+                    changed = whatchanged(l1.data[item], l2.data[item])
+                    print(VERBOSE, "Changed for", item)
+                    for changeline in changed:
+                        chan, reg = changeline[0].split(":")
+                        if changeline[1] == '':
+                            print("\t{} {} NEW with version {}".format(chan, reg, changeline[2]))
+                        elif changeline[2] == '':
+                            print("\t{} {} REMOVED".format(chan, reg))
+                        else:
+                            print(
+                                "\t{} {} CHANGED from version {} to {}".format(chan, reg, changeline[1], changeline[2]))
         else:
-            print("Did NOT find", item, "in", Flags.configsettings['link2'], "- report it as removed")
+            if Flags.debug:
+                print("Did NOT find", item, "in", Flags.configsettings['link2'], "- report it as removed")
             o1.data[item] = l1.data[item]
             o1.data[item]['status'] = 'removed'
+            if Flags.verbose:
+                print(VERBOSE, "Removed", item)
     # check for any that are in the new file, but not in the old file
     for item in l2.data:
         if item not in l1.data:
-            print("Did NOT find", item, "in", Flags.configsettings['link1'], "- this is a new item, report it")
+            if Flags.debug:
+                print("Did NOT find", item, "in", Flags.configsettings['link1'], "- this is a new item, report it")
             o1.data[item] = l2.data[item]
             o1.data[item]['status'] = 'added'
+            if Flags.verbose:
+                print(VERBOSE, "New", item)
     o1.writeoutput()
+
+
+def whatchanged(old, new) -> list:
+    """reports on what has changed between the 2 lists"""
+    # first re-structure the image lists into keyed dictionaries by channel and region
+    oldbykey = restruct(old['images'])
+    newbykey = restruct(new['images'])
+    out = []
+    patternver = r".com/(.*)/"
+    for imgkey in oldbykey:
+        oldver = extractgroup(re.search(patternver, oldbykey[imgkey]))
+        if imgkey in newbykey:
+            newver = extractgroup(re.search(patternver, newbykey[imgkey]))
+            if oldbykey[imgkey] != newbykey[imgkey]:
+                # image url has changed
+                out.append([imgkey, oldver, newver])
+        else:
+            # deleted entry
+            out.append([imgkey, oldver, ''])
+    for imgkey in newbykey:
+        # check for new items
+        if imgkey not in oldbykey:
+            # this is new
+            newver = extractgroup(re.search(patternver, newbykey[imgkey]))
+            out.append([imgkey, '', newver])
+    return out
+
+
+def restruct(imglist: list) -> dict:
+    out = {}
+    for img in imglist:
+        outkey = img['channel'] + ":" + img['region']
+        out[outkey] = img['image']
+    return out
 
 
 class ReadJson:
@@ -100,6 +144,7 @@ class ReadJson:
         json_fh.close()
         if Flags.debug:
             print(DEBUG, "Got json input file", json_file)
+
 
 class WriteJson:
     def __init__(self, rootpath: str, outfile: str):
@@ -142,6 +187,7 @@ def extractgroup(match):
     if match is None:
         return None
     return match.group(1)
+
 
 class Flags:
     verbose = False
