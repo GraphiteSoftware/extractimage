@@ -7,5 +7,6 @@
   "extractimages": "extracted_images",
   "extractprops": "extracted_props",
   "xmonly": true,
+  "model": "modellist.json",
   "output": "allchksum.json"
 }
