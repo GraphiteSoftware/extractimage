@@ -1,27 +1,30 @@
 from bs4 import BeautifulSoup
 import httplib2
 import json
-import sys
 from optparse import OptionParser
 import ericbase as eb
 import os.path
 import re
-import datetime
+import sys
 
 # define global variables
 # options as globals
-verbose = False
-debug = False
-test = False
-DEBUG = '[DEBUG] '
-VERBOSE = '[STATUS] '
+DEBUG = '[DEBUG]'
+VERBOSE = '[STATUS]'
+ERROR = '[ERROR]'
 
 
 def main():
     """main processing loop"""
-    global verbose, debug, test
-    verbose, debug, test, root, data, outputfile, xmonly = processargs()
-    rw = ReadWrite(root, data, outputfile)
+    do = MyArgs()
+    do.processargs()
+    if Flags.test:
+        print(VERBOSE, "Running in Test Mode")
+    if Flags.debug:
+        print(DEBUG,
+              "Flags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
+                  Flags.verbose, Flags.debug, Flags.test, Flags.config, Flags.configsettings))
+    writefile = WriteJson(Flags.configsettings['root'], Flags.configsettings['output'])
     phonelist = []
     foundmatch = False
 
@@ -34,64 +37,90 @@ def main():
         # print(d.text)
         vardata = extractgroup(re.search(r"var phones =(.*?);", d.text))
         if vardata is None:
-            if debug:
+            if Flags.debug:
                 print("No match on element", i)
             continue
         else:
-            if debug:
+            if Flags.debug:
                 print("Got a match on element:", i)
             phonelist = json.loads(vardata)
             foundmatch = True
             break
     if foundmatch:
-        if debug:
+        if Flags.debug:
             print("\n\n\nPhone list is: \n", phonelist)
     else:
         print("Did not find the phone list")
-    if xmonly:
+    if Flags.configsettings['xmonly']:
         xmlist = extractxm(phonelist)
-        rw.writeoutput(xmlist)
+        writefile.data = xmlist
     else:
-        rw.writeoutput(phonelist)
+        writefile.data = phonelist
+    writefile.writeoutput()
 
 
-class ReadWrite:
-    def __init__(self, rootpath: str, datapath: str, outfile: str):
+class ReadJson:
+    def __init__(self, rootpath: str, infile: str):
         if rootpath is None:
-            self.root_path = '/Volumes/passport'
+            self.root_path = '.'
         else:
             self.root_path = rootpath
-        if datapath is None:
-            self.url_list_path = 'xiaomi_data'
+        if infile is None:
+            self.json = 'linklist.json'
         else:
-            self.url_list_path = datapath
-        d = datetime.datetime.now()
-        dString = d.strftime("%Y%m%d")
-        if outfile is None:
-            self.output_json = 'modellist-' + dString + '.json'
-        else:
-            self.output_json = outfile
+            self.json = infile
+        self.data = {}
 
     def __str__(self) -> str:
-        return "Output file is: " + os.path.join(self.root_path,
-                                                self.url_list_path,
-                                                self.output_json)
+        return "Input file is: " + os.path.join(self.root_path, self.json, )
 
-    def writeoutput(self, idout: list):
-        """write the model list to the json file"""
-        global verbose, debug, test
-        if debug:
-            print("{}{}".format(DEBUG, idout))
-        json_file = os.path.join(self.root_path, self.url_list_path, self.output_json)
-        json_fh = open(json_file, "w")
-        json.dump(idout, json_fh)
+    def readinput(self):
+        """read a file"""
+        json_file = os.path.join(self.root_path, self.json)
+        try:
+            json_fh = open(json_file, "r")
+        except IOError:
+            print(ERROR, "Failed to open input file", self.json)
+            sys.exit(1)
+        self.data = json.load(json_fh)
+        json_fh.close()
+        if Flags.debug:
+            print(DEBUG, "Got json input file", json_file)
+
+
+class WriteJson:
+    def __init__(self, rootpath: str, outfile: str):
+        if rootpath is None:
+            self.root_path = '.'
+        else:
+            self.root_path = rootpath
+        if outfile is None:
+            self.json = 'linklist.json'
+        else:
+            self.json = outfile
+        self.data = {}
+
+    def __str__(self) -> str:
+        return "Output file is: " + os.path.join(self.root_path, self.json, )
+
+    def writeoutput(self):
+        """write the build props to the json file"""
+        if Flags.debug:
+            print(DEBUG, self.data)
+        json_file = os.path.join(self.root_path, self.json)
+        try:
+            json_fh = open(json_file, "w")
+        except IOError:
+            print(ERROR, "Failed to open output file", self.json)
+            sys.exit(1)
+        json.dump(self.data, json_fh)
         json_fh.close()
 
 
 def extractxm(ph: list) -> list:
     xmlist = []
     for ent in ph:
-        if debug:
+        if Flags.debug:
             if ent['type'] == "1":
                 print("Xiaomi device", ent['name'])
             else:
@@ -108,32 +137,48 @@ def extractgroup(match):
     return match.group(1)
 
 
-def processargs():
-    """process arguments and options"""
-    usagemsg = "This program reads the Xiaomi dowloads page and get the list of models and the URLs. " \
+class Flags:
+    verbose = False
+    debug = False
+    test = False
+    config = None
+    configsettings = {}
+
+
+class MyArgs:
+    def __init__(self):
+        # Specifc to this program
+
+        # Usual suspects
+        self.usagemsg = "This program reads the Xiaomi dowloads page and get the list of models and the URLs. " \
                "The data is then written to a json file."
 
-    parser = OptionParser(usagemsg)
-    parser.add_option("-v", "--verbose", dest="verbose", action="store_true", default=False,
-                      help="Print out helpful information during processing")
-    parser.add_option("-d", "--debug", dest="debug", action="store_true", default=False,
-                      help="Print out debug messages during processing")
-    parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
-                      help="Use test file instead of full file list")
-    parser.add_option("-x", "--xiaomi", dest="xiaomionly", action="store_true", default=False,
-                      help="Only extract Xiaomi (type=1) entries")
-    parser.add_option("-r", "--root", dest="rootpath", default=None,
-                      help="Root path to use for files", metavar="ROOTPATH")
-    parser.add_option("-a", "--data", dest="datapath", default=None,
-                      help="Path to use for files", metavar="DATAPATH")
-    parser.add_option("-o", "--output", dest="outputfile", default=None,
-                      help="JSON file to write the download URL data to", metavar="OUTPUTFILE")
-    (options, args) = parser.parse_args()
+    def processargs(self):
+        """process arguments and options"""
+        parser = OptionParser(self.usagemsg)
+        parser.add_option("-v", "--verbose", dest="verbose", action="store_true", default=False,
+                          help="Print out helpful information during processing")
+        parser.add_option("-d", "--debug", dest="debug", action="store_true", default=False,
+                          help="Print out debug messages during processing")
+        parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
+                          help="Use test file instead of full file list")
+        parser.add_option("-c", "--config", dest="config", default=None,
+                          help="Configuration file (JSON)", metavar="CONFIG")
 
-    # required options checks
-    if options.debug:
-        options.verbose = True
-    return options.verbose, options.debug, options.test, options.rootpath, options.datapath, options.outputfile, options.xiaomionly
+        options, args = parser.parse_args()
+        # required options checks
+        if options.debug:
+            options.verbose = True
+        Flags.verbose = options.verbose
+        Flags.debug = options.debug
+        Flags.test = options.test
+        Flags.config = options.config
+        if Flags.config is not None:
+            json_fh = open(Flags.config, "r")
+            Flags.configsettings = json.load(json_fh)
+            json_fh.close()
+        else:
+            eb.printerror("Missing required configuration file (--config)")
 
 
 if __name__ == '__main__':
