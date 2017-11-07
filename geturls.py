@@ -231,8 +231,10 @@ class MyArgs:
 
         # Usual suspects
         self.usagemsg = "This program reads the Xiaomi download site, extracts the list of models and then" \
-                        "extracts all of the image URLs from all of the download pages. " + \
-                        "The URLS are written to a json file."
+                        "extracts all of the image URLs from all of the download pages. "  \
+                        "The URLS are written to a json file." \
+                        "Here is the sequence or processing:\n" \
+                        "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
 
     def processargs(self):
         """process arguments and options"""

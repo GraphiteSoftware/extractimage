@@ -205,7 +205,9 @@ class MyArgs:
         # Usual suspects
         self.usagemsg = "This program reads a json file that been output from the extract program and has a list of\
          image urls and associated data. Then the images are downloaded, unzipped, and ripped to extract the build\
-          properties and write those to a JSON file"
+          properties and write those to a JSON file"\
+                        "Here is the sequence or processing:\n" \
+                        "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
 
     def processargs(self):
         """process arguments and options"""

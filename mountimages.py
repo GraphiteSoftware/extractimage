@@ -303,7 +303,9 @@ class MyArgs:
 
         # Usual suspects
         self.usagemsg = "This program looks for data or Android sparse images, extract the image to a raw, " \
-                        "mountable format and then mounts the image to a known directory"
+                        "mountable format and then mounts the image to a known directory"\
+                        "Here is the sequence or processing:\n" \
+                        "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
 
     def processargs(self):
         """process arguments and options"""
