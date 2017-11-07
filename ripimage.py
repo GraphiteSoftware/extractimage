@@ -36,7 +36,7 @@ def main():
             file_name = extractgroup(re.search(r"http:\/\/.*\/(.*)", i['image']))
             if Flags.debug:
                 print(Flags.configsettings['root'], Flags.configsettings['extractedimages'], file_name)
-            file_path = os.path.join(Flags.configsettings['root'], Flags.configsettings['extractedimages'], file_name)
+            file_path = os.path.join(Flags.configsettings['root'], Flags.configsettings['extractimages'], file_name)
             if os.path.isfile(file_path) and not Flags.force:
                 if Flags.verbose:
                     print("[STATUS] File exists. Not downloading. [{}]".format(file_path))
