@@ -153,8 +153,9 @@ class ReadJson:
         json_file = os.path.join(self.root_path, self.json)
         try:
             json_fh = open(json_file, "r")
-        except IOError:
-            print(ERROR, "Failed to open input file", self.json)
+        except IOError as err:
+            print(ERROR, "Failed to open input file", json_file)
+            print(ERROR, err.errno, err.filename, err.strerror)
             sys.exit(1)
         self.data = json.load(json_fh)
         json_fh.close()
@@ -188,10 +189,11 @@ class WriteJson:
         json_file = os.path.join(self.root_path, self.data_path, self.json)
         try:
             json_fh = open(json_file, "w")
-        except IOError:
-            print(ERROR, "Failed to open output file", self.json)
+        except IOError as err:
+            print(ERROR, "Failed to open output file", json_file)
+            print(ERROR, err.errno, err.filename, err.strerror)
             sys.exit(1)
-        json.dump(self.data, json_fh)
+        json.dump(self.data, json_fh, indent=4)
         json_fh.close()
 
 
