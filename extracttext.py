@@ -101,6 +101,7 @@ class WriteJson:
         json.dump(self.data, json_fh)
         json_fh.close()
 
+
 class Global:
     global_id = ''
     china_id = ''
@@ -142,16 +143,17 @@ def walker(soup, ld):
                         if c == 'download_nv':
                             Global.channel = extractgroup(re.search(r"^(.*?) ", child.text))
             if child.name == 'a':
-               if 'class' in child.attrs:
+                if 'class' in child.attrs:
                     # print("Found a class of:", child.get('class'))
                     if 'btn_5' in child.get('class'):
                         if Flags.verbose:
-                            print("Processing", Global.channel, Global.processing, Global.model_name, "link of:", child.get('href'))
-                            temp_d = {'image': child.get('href'), 'channel': Global.channel, 'region': Global.processing}
+                            print("Processing", Global.channel, Global.processing, Global.model_name, "link of:",
+                                  child.get('href'))
+                            temp_d = {'image': child.get('href'), 'channel': Global.channel,
+                                      'region': Global.processing}
                             ld['images'].append(temp_d)
             ld = walker(child, ld)
     return ld
-
 
 
 def processline(pid: str, n: str):
@@ -185,9 +187,9 @@ class MyArgs:
         # Specifc to this program
 
         # Usual suspects
-        self.usagemsg = "This program reads a json file that has the Xiaomi model list as pulled from the Xiaomi" +\
-        "download site and extracts all of the image URLs from all of the download pages. " +\
-        "The URLS are written to a json file."
+        self.usagemsg = "This program reads a json file that has the Xiaomi model list as pulled from the Xiaomi" + \
+                        "download site and extracts all of the image URLs from all of the download pages. " + \
+                        "The URLS are written to a json file."
 
     def processargs(self):
         """process arguments and options"""
