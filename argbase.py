@@ -12,15 +12,8 @@ class Flags:
 
 
 class MyArgs:
-    def __init__(self):
-        # Specifc to this program
-
-        # Usual suspects
-        self.usagemsg = "This program reads the Xiaomi download site, extracts the list of models and then" \
-                        "extracts all of the image URLs from all of the download pages. "  \
-                        "The URLS are written to a json file." \
-                        "Here is the sequence or processing:\n" \
-                        "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
+    def __init__(self, use):
+        self.usagemsg = use
 
     def processargs(self):
         """process arguments and options"""
@@ -43,7 +36,7 @@ class MyArgs:
         Flags.test = options.test
         Flags.config = options.config
         if Flags.config is not None:
-            cf = rb.ReadJson('.', Flags.config)
+            cf = rb.ReadJson('.', '.', Flags.config)
             cf.readinput()
             Flags.configsettings = cf.data
         else:

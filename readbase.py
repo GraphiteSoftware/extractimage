@@ -5,15 +5,19 @@ import sys
 ERROR = '[ERROR]'
 
 class ReadJson:
-    def __init__(self, rootpath: str, infile: str):
+    def __init__(self, rootpath: str, datapath: str, infile: str):
         if rootpath is None:
             self.root_path = '.'
         else:
             self.root_path = rootpath
         if infile is None:
-            self.json = 'linklist.json'
+            self.json = 'input.json'
         else:
             self.json = infile
+        if datapath is None:
+            self.data_path = '.'
+        else:
+            self.data_path = datapath
         self.data = {}
 
     def __str__(self) -> str:
@@ -24,7 +28,7 @@ class ReadJson:
 
     def readinput(self):
         """read a file"""
-        json_file = os.path.join(self.root_path, self.json)
+        json_file = os.path.join(self.root_path, self.data_path, self.json)
         try:
             json_fh = open(json_file, "r")
         except IOError as err:
