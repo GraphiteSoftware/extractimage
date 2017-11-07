@@ -6,14 +6,12 @@ import os.path
 import fnmatch
 import re
 import subprocess
-import sys, os, errno
+import sys
+import os
+import errno
 
 # define global variables
 # options as globals
-verbose = False
-debug = False
-test = False
-all = False
 DEBUG = '[DEBUG]'
 VERBOSE = '[STATUS]'
 WARNING = '[WARNING]'
@@ -25,32 +23,35 @@ patternimg = '*.img'
 patterndat = '*.dat'
 patternversion = r"V(\d*\.\d*\.\d*\.\d*)"
 
+
 # app/Spaces*/Spaces*.apk
 # priv-app/SpacesManagerService/Spaces*.apk
 
 
 def main():
     """main processing loop"""
-    global verbose, debug, test, root, images, output_dict, all
-    verbose, debug, test, root, images, data, link, all = processargs()
-    if debug:
-        print(DEBUG, "\nVerbose: {}\nDebug: {}\nTest: {}\nAll: {}".format(verbose, debug, test, all))
-    if test:
-        print(WARNING, "Running in Test Mode")
-    rw = ReadWrite(root, images, data, link)
-    d = rw.readinput()
-    if debug:
-        print(DEBUG, str(rw))
-    modelstoprocess = len(d)
-    for idx, line in enumerate(d):
-        if verbose:
+    do = MyArgs()
+    do.processargs()
+    if Flags.test:
+        print(VERBOSE, "Running in Test Mode")
+    if Flags.debug:
+        print(DEBUG,
+              "Flags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
+                  Flags.verbose, Flags.debug, Flags.test, Flags.config, Flags.configsettings))
+    rw = ReadJson(Flags.configsettings['root'], Flags.configsettings['data'], Flags.configsettings['links'])
+    rw.readinput()
+    modelstoprocess = len(rw.data)
+    for idx, line in enumerate(rw.data):
+        if Flags.verbose:
             print(VERBOSE, "Processing model {} of {}".format(idx + 1, modelstoprocess))
-        model = d[line]['name']
-        for i in d[line]['images']:
-            file_name = extractgroup(re.search(r"http:\/\/.*\/(.*)", i['image']))
-            pf = ProcessImage(rw.root_path, rw.image_path, rw.extractpath, file_name, model, i['region'], i['channel'], all)
+        model = rw.data[line]['name']
+        for i in rw.data[line]['images']:
+            file_name = extractgroup(re.search(r"http://.*/(.*)", i['image']))
+            pf = ProcessImage(Flags.configsettings['root'], Flags.configsettings['image'],
+                              Flags.configsettings['extractimages'], file_name, model, i['region'], i['channel'],
+                              False)
             pf.processfile()
-        if test:
+        if Flags.test:
             break
 
 
@@ -78,7 +79,8 @@ def getfilelist(filepath) -> list:
 
 
 class ProcessImage:
-    def __init__(self, root: str, imgdir: str, extractdir: str, filename: str, model: str, region: str, channel: str, all: bool):
+    def __init__(self, root: str, imgdir: str, extractdir: str, filename: str, model: str, region: str, channel: str,
+                 all: bool):
         self.file = os.path.join(root, imgdir, filename)
         self.extractpath = os.path.join(root, extractdir)
         self.mountpath = os.path.join(root, 'tmp')
@@ -103,7 +105,7 @@ class ProcessImage:
             if self.channel.lower() == 'stable':
                 return True
         else:
-            if verbose:
+            if Flags.verbose:
                 dl_message = "Could not find file: [" + self.file + "]" + self.model + ", " + self.region + ", " + \
                              self.channel
                 print(WARNING, dl_message)
@@ -115,7 +117,8 @@ class ProcessImage:
         if version is None:
             d = self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')
         else:
-            d = self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')+version
+            d = self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ',
+                                                                                                          '') + version
         return d
 
     def buildcommand(self, type: str, src: str, dest: str) -> list:
@@ -133,30 +136,30 @@ class ProcessImage:
 
     def processfile(self):
         """processing the downloaded zip/tar file"""
-        global verbose, debug, test, sysdatname, sysimgname
         if self.checkfile():
-            if debug:
+            if Flags.debug:
                 dl_message = "Found and processing: " + self.model + ", " + self.region + ", " + \
                              self.channel + " File: [" + self.file + "]"
                 print(DEBUG, dl_message)
 
             file_type = magic.from_file(self.file)
-            if debug:
+            if Flags.debug:
                 print(DEBUG, "\t[{}] is type [{}]".format(self.file, file_type))
             if file_type[:4] == 'gzip':
                 # tgz file - we don't do those yet (only one in the file)
-                if verbose:
+                if Flags.verbose:
                     print(VERBOSE, "File is Tar GZ format. SKIPPING:", self.file)
 
             if file_type[-5:] == '(JAR)':
                 # zip file - use unzip
                 dirname = os.path.join(self.extractpath, self.makedirname())
-                if verbose:
+                if Flags.verbose:
                     print("Processing:", self.file, "(" + file_type + ") as ZIP into [" + dirname + "]")
                 if os.path.isdir(dirname):
                     # directory exists, probably extracted already, skip to find system.new.dat
-                    if verbose:
-                        print(VERBOSE, "Extraction directory [" + dirname + "] for", self.file, "already exists. SKIPPING")
+                    if Flags.verbose:
+                        print(VERBOSE, "Extraction directory [" + dirname + "] for", self.file,
+                              "already exists. SKIPPING")
                 else:
                     subprocess.run(self.buildcommand('unzip', self.file, dirname))
 
@@ -167,7 +170,7 @@ class ProcessImage:
                 if not os.path.isfile(outputpath):
                     # system image does not exist - extract it
                     if os.path.isfile(sysdatpath):
-                        if verbose:
+                        if Flags.verbose:
                             print(VERBOSE, "Found", self.sysdatname, "in", dirname)
                         # check that we have the transfer list
                         if os.path.isfile(transferlistpath):
@@ -184,17 +187,18 @@ class ProcessImage:
                         return 2
                 else:
                     # system img already exists - process it
-                    if verbose:
-                        print(VERBOSE, "Found an existing", outputpath, "looking for", self.buildpropname, "in that file")
+                    if Flags.verbose:
+                        print(VERBOSE, "Found an existing", outputpath, "looking for", self.buildpropname,
+                              "in that file")
                 # now we have a known image file
                 subprocess.run(self.buildcommand('mount', outputpath, self.mountpath))
-                buildpropspath =  os.path.join(self.mountpath, self.buildpropname)
+                buildpropspath = os.path.join(self.mountpath, self.buildpropname)
                 bpoutputname = self.makedirname() + '.' + self.buildpropname
                 bpoutputpath = os.path.join(self.propspath, bpoutputname)
                 if os.path.isfile(buildpropspath):
                     # found the build props file
                     subprocess.run(self.buildcommand('copy', buildpropspath, bpoutputpath))
-                    if verbose:
+                    if Flags.verbose:
                         print(VERBOSE, "Found and copied", buildpropspath, "to", bpoutputpath)
                 else:
                     print(ERROR, "Did not find", buildpropspath)
@@ -203,59 +207,71 @@ class ProcessImage:
         return 0
 
 
-class ReadWrite:
-    def __init__(self, rootpath: str, imagepath: str, datapath: str, infile: str):
+class ReadJson:
+    def __init__(self, rootpath: str, datapath: str, infile: str):
         if rootpath is None:
-            self.root_path = '/Volumes/passport'
+            self.root_path = '.'
         else:
             self.root_path = rootpath
-        if imagepath is None:
-            self.image_path = 'xiaomi_images'
-        else:
-            self.image_path = imagepath
-        if datapath is None:
-            self.url_list_path = 'xiaomi_data'
-        else:
-            self.url_list_path = datapath
         if infile is None:
-            self.input_json = 'linklist.json'
+            self.json = 'linklist.json'
         else:
-            self.input_json = infile
-        self.extractpath = 'extracted_images'
-
-        # check that the path is valid and exists
-        if not os.path.exists(os.path.join(self.root_path, self.image_path)):
-            eb.printerror(
-                "Image directory does not exist: [path: " + os.path.join(self.root_path,
-                                                                         self.image_path) + "]")
-        if not os.path.exists(os.path.join(self.root_path, self.url_list_path, self.input_json)):
-            eb.printerror(
-                "Link file does not exist or is not mounted: [path: " + os.path.join(self.root_path,
-                                                                                    self.url_list_path,
-                                                                                    self.input_json) + "]")
+            self.json = infile
+        if datapath is None:
+            self.data_path = '.'
+        else:
+            self.data_path = datapath
+        self.data = {}
 
     def __str__(self) -> str:
-        return "Input path is: " + os.path.join(self.root_path, self.image_path, )
+        return "Input file is: " + os.path.join(self.root_path, self.data_path, self.json, )
 
     def readinput(self):
         """read a file"""
-        global verbose, debug, test
-        json_file = os.path.join(self.root_path, self.url_list_path, self.input_json)
-        json_fh = open(json_file, "r")
-        dtdata = json.load(json_fh)
+        json_file = os.path.join(self.root_path, self.data_path, self.json)
+        try:
+            json_fh = open(json_file, "r")
+        except IOError as err:
+            print(ERROR, "Failed to open input file", json_file)
+            print(ERROR, err.errno, err.filename, err.strerror)
+            sys.exit(1)
+        self.data = json.load(json_fh)
         json_fh.close()
-        if debug:
-            print(DEBUG, "Got json file")
-        return dtdata
+        if Flags.debug:
+            print(DEBUG, "Got json input file", json_file)
 
-    def writeoutput(self, idout: dict):
+
+class WriteJson:
+    def __init__(self, rootpath: str, datapath: str, outfile: str):
+        if rootpath is None:
+            self.root_path = '.'
+        else:
+            self.root_path = rootpath
+        if outfile is None:
+            self.json = 'output.json'
+        else:
+            self.json = outfile
+        if datapath is None:
+            self.data_path = '.'
+        else:
+            self.data_path = datapath
+        self.data = {}
+
+    def __str__(self) -> str:
+        return "Output file is: " + os.path.join(self.root_path, self.data_path, self.json, )
+
+    def writeoutput(self):
         """write the build props to the json file"""
-        global verbose, debug, test
-        if debug:
-            print("{}{}".format(DEBUG, idout))
-        json_file = os.path.join(self.root_path, 'props.json')
-        json_fh = open(json_file, "w")
-        json.dump(idout, json_fh)
+        if Flags.debug:
+            print(DEBUG, self.data)
+        json_file = os.path.join(self.root_path, self.data_path, self.json)
+        try:
+            json_fh = open(json_file, "w")
+        except IOError as err:
+            print(ERROR, "Failed to open output file", json_file)
+            print(ERROR, err.errno, err.filename, err.strerror)
+            sys.exit(1)
+        json.dump(self.data, json_fh, indent=4)
         json_fh.close()
 
 
@@ -273,35 +289,48 @@ def extractgroup(match):
     return match.group(1)
 
 
-def processargs():
-    """process arguments and options"""
-    usagemsg = "This program looks for data or Android sparse images, extract the image to a raw, mountable format\
-     and then mounts the image to a known directory"
+class Flags:
+    verbose = False
+    debug = False
+    test = False
+    config = None
+    configsettings = {}
 
-    parser = OptionParser(usagemsg)
-    parser.add_option("-v", "--verbose", dest="verbose", action="store_true", default=False,
-                      help="Print out helpful information during processing")
-    parser.add_option("-d", "--debug", dest="debug", action="store_true", default=False,
-                      help="Print out debug messages during processing")
-    parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
-                      help="Use test file instead of full file list")
-    parser.add_option("-a", "--all", dest="all", action="store_true", default=False,
-                      help="Extract all images. Default is only Stable")
-    parser.add_option("-r", "--root", dest="rootpath", default=None,
-                      help="Root path to use for files and images", metavar="ROOTPATH")
-    parser.add_option("-f", "--data", dest="datapath", default=None,
-                      help="Path to use for files", metavar="DATAPATH")
-    parser.add_option("-i", "--images", dest="imagepath", default=None,
-                      help="Path to use for images", metavar="IMAGEPATH")
-    parser.add_option("-l", "--links", dest="linkfile", default=None,
-                      help="JSON file with image URL data", metavar="LINKFILE")
-    options, args = parser.parse_args()
 
-    # required options checks
-    if options.debug:
-        options.verbose = True
-    return options.verbose, options.debug, options.test, options.rootpath, options.imagepath, options.datapath, \
-           options.linkfile, options.all
+class MyArgs:
+    def __init__(self):
+        # Specifc to this program
+
+        # Usual suspects
+        self.usagemsg = "This program looks for data or Android sparse images, extract the image to a raw, " \
+                        "mountable format and then mounts the image to a known directory"
+
+    def processargs(self):
+        """process arguments and options"""
+        parser = OptionParser(self.usagemsg)
+        parser.add_option("-v", "--verbose", dest="verbose", action="store_true", default=False,
+                          help="Print out helpful information during processing")
+        parser.add_option("-d", "--debug", dest="debug", action="store_true", default=False,
+                          help="Print out debug messages during processing")
+        parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
+                          help="Use test file instead of full file list")
+        parser.add_option("-c", "--config", dest="config", default=None,
+                          help="Configuration file (JSON)", metavar="CONFIG")
+
+        options, args = parser.parse_args()
+        # required options checks
+        if options.debug:
+            options.verbose = True
+        Flags.verbose = options.verbose
+        Flags.debug = options.debug
+        Flags.test = options.test
+        Flags.config = options.config
+        if Flags.config is not None:
+            cf = ReadJson('.', '.', Flags.config)
+            cf.readinput()
+            Flags.configsettings = cf.data
+        else:
+            eb.printerror("Missing required configuration file (--config)")
 
 
 class SDat2Img:
@@ -407,8 +436,6 @@ class SDat2Img:
         output_img.close()
         new_data_file.close()
         print('Done! Output image: %s' % os.path.realpath(output_img.name))
-
-
 
 
 if __name__ == '__main__':
