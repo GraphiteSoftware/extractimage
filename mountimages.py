@@ -47,7 +47,7 @@ def main():
         model = rw.data[line]['name']
         for i in rw.data[line]['images']:
             file_name = extractgroup(re.search(r"http://.*/(.*)", i['image']))
-            pf = ProcessImage(Flags.configsettings['root'], Flags.configsettings['image'],
+            pf = ProcessImage(Flags.configsettings['root'], Flags.configsettings['images'],
                               Flags.configsettings['extractimages'], file_name, model, i['region'], i['channel'],
                               False)
             pf.processfile()
