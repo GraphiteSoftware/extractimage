@@ -9,6 +9,7 @@ import subprocess
 import sys
 import os
 import errno
+from sys import platform as _platform
 
 # define global variables
 # options as globals
@@ -38,6 +39,16 @@ def main():
         print(DEBUG,
               "Flags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
                   Flags.verbose, Flags.debug, Flags.test, Flags.config, Flags.configsettings))
+
+    if _platform == "linux" or _platform == "linux2":
+        # linux
+        Flags.ubuntu = True
+    elif _platform == "darwin":
+        # MAC OS X
+        Flags.macos = True
+    else:
+        # Windows - will not work
+        eb.printerror("This programs will only run correctly on Linux or Mac OS based systems")
     rw = ReadJson(Flags.configsettings['root'], Flags.configsettings['data'], Flags.configsettings['links'])
     rw.readinput()
     modelstoprocess = len(rw.data)
@@ -123,15 +134,26 @@ class ProcessImage:
 
     def buildcommand(self, type: str, src: str, dest: str) -> list:
         cmd = []
-        if type == 'unzip':
-            cmd = ['unzip', src, '-d', dest]
-        elif type == 'mount':
-            cmd = ['ext4fuse', src, dest]
-        elif type == 'unmount':
-            cmd = ['umount', dest]
-        elif type == 'copy':
-            cmd = ['cp', src, dest]
-        print("COMMAND is:", cmd)
+        if Flags.macos:
+            if type == 'unzip':
+                cmd = ['unzip', src, '-d', dest]
+            elif type == 'mount':
+                cmd = ['ext4fuse', src, dest]
+            elif type == 'unmount':
+                cmd = ['umount', dest]
+            elif type == 'copy':
+                cmd = ['cp', src, dest]
+        if Flags.ubuntu:
+            if type == 'unzip':
+                cmd = ['unzip', src, '-d', dest]
+            elif type == 'mount':
+                cmd = ['sudo', 'mount', '-t ext4', src, dest]
+            elif type == 'unmount':
+                cmd = ['sudo', 'umount', dest]
+            elif type == 'copy':
+                cmd = ['cp', src, dest]
+        if Flags.debug:
+            print("COMMAND is:", cmd)
         return cmd
 
     def processfile(self):
@@ -295,6 +317,8 @@ class Flags:
     test = False
     config = None
     configsettings = {}
+    ubuntu = False
+    macos = False
 
 
 class MyArgs:
