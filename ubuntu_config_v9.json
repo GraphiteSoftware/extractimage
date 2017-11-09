@@ -2,11 +2,11 @@
   "root": "/media/eric/Outback/xiaomi-images",
   "images": "xiaomi_images",
   "data": "xiaomi_data",
-  "links": "linklist-20171107.json",
+  "links": "linklist-v9.json",
   "mount": "tmp",
   "extractimages": "extracted_images",
   "extractprops": "extracted_props",
   "xmonly": true,
   "model": "modellist-20171107.json",
-  "output": "allprops.json"
+  "output": "v9props.json"
 }
