@@ -147,7 +147,7 @@ class ProcessImage:
             if type == 'unzip':
                 cmd = ['unzip', src, '-d', dest]
             elif type == 'mount':
-                cmd = ['sudo', 'mount', '-t ext4', src, dest]
+                cmd = ['sudo', 'mount', '-t', 'ext4', src, dest]
             elif type == 'unmount':
                 cmd = ['sudo', 'umount', dest]
             elif type == 'copy':
