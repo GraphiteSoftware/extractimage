@@ -7,7 +7,6 @@ import subprocess
 import sys
 import os
 import errno
-from sys import platform as _platform
 import argbase as arg
 import readbase as rb
 
@@ -40,19 +39,8 @@ def main():
     if arg.Flags.test:
         print(VERBOSE, "Running in Test Mode")
     if arg.Flags.debug:
-        print(DEBUG,
-              "Flags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
-                  arg.Flags.verbose, arg.Flags.debug, arg.Flags.test, arg.Flags.config, arg.Flags.configsettings))
+        print(do)
 
-    if _platform == "linux" or _platform == "linux2":
-        # linux
-        arg.Flags.ubuntu = True
-    elif _platform == "darwin":
-        # MAC OS X
-        arg.Flags.macos = True
-    else:
-        # Windows - will not work
-        eb.printerror("This programs will only run correctly on Linux or Mac OS based systems")
     rw = rb.ReadJson(arg.Flags.configsettings['root'],
                      arg.Flags.configsettings['data'],
                      arg.Flags.configsettings['links'])

@@ -1,6 +1,8 @@
 from optparse import OptionParser
 import readbase as rb
 import ericbase as eb
+from sys import platform as _platform
+import json
 
 
 class Flags:
@@ -17,6 +19,18 @@ class Flags:
 class MyArgs:
     def __init__(self, use):
         self.usagemsg = use
+
+    def __str__(self):
+        argstring = "[DEBUG] Program Arguments:"
+        argstring = argstring + "\nFlags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}".format(Flags.verbose,
+                                                                                 Flags.debug,
+                                                                                 Flags.test)
+        argstring = argstring +"\n\tForce: {}\n\tUbuntu: {}\n\tMacOS: {}".format(Flags.force,
+                                                                                 Flags.ubuntu,
+                                                                                 Flags.macos)
+        argstring = argstring + "\nConfig file is [{}]".format(Flags.config)
+        argstring = argstring + "\nConfig settings are:\n" + json.dumps(Flags.configsettings, indent=4)
+        return argstring
 
     def processargs(self):
         """process arguments and options"""
@@ -40,6 +54,16 @@ class MyArgs:
         Flags.debug = options.debug
         Flags.test = options.test
         Flags.force = options.force
+        if _platform == "linux" or _platform == "linux2":
+            # linux
+            Flags.ubuntu = True
+        elif _platform == "darwin":
+            # MAC OS X
+            Flags.macos = True
+        else:
+            # Windows - will not work
+            eb.printerror("This program will only run correctly on Linux or Mac OS based systems")
+
         Flags.config = options.config
         if Flags.config is not None:
             cf = rb.ReadJson('.', '.', Flags.config)
