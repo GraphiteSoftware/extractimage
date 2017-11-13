@@ -1,5 +1,4 @@
 import magic
-import ericbase as eb
 import os.path
 import fnmatch
 import re
@@ -26,10 +25,6 @@ usagemsg = "This program looks for data or Android sparse images, extract the im
            "mountable format and then mounts the image to a known directory" \
            "Here is the sequence or processing:\n" \
            "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
-
-
-# app/Spaces*/Spaces*.apk
-# priv-app/SpacesManagerService/Spaces*.apk
 
 
 def main():

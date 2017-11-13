@@ -25,9 +25,8 @@ def main():
     if arg.Flags.test:
         print(VERBOSE, "Running in Test Mode")
     if arg.Flags.debug:
-        print(DEBUG,
-              "flag are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
-                  arg.Flags.verbose, arg.Flags.debug, arg.Flags.test, arg.Flags.config, arg.Flags.configsettings))
+        print(do)
+
     writefile = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],
                              arg.Flags.configsettings['model'])
     phonelist = []

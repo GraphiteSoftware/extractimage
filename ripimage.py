@@ -23,9 +23,7 @@ def main():
     if arg.Flags.test:
         print(VERBOSE, "Running in Test Mode")
     if arg.Flags.debug:
-        print(DEBUG,
-              "Flags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
-                  arg.Flags.verbose, arg.Flags.debug, arg.Flags.test, arg.Flags.config, arg.Flags.configsettings))
+        print(do)
 
     rd = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],
                      arg.Flags.configsettings['links'])
