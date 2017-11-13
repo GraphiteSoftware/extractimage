@@ -7,7 +7,10 @@ class Flags:
     verbose = False
     debug = False
     test = False
+    force = False
     config = None
+    ubuntu = False
+    macos = False
     configsettings = {}
 
 
@@ -24,6 +27,8 @@ class MyArgs:
                           help="Print out debug messages during processing")
         parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
                           help="Use test file instead of full file list")
+        parser.add_option("-f", "--force", dest="force", action="store_true", default=False,
+                          help="Force processing")
         parser.add_option("-c", "--config", dest="config", default=None,
                           help="Configuration file (JSON)", metavar="CONFIG")
 
@@ -34,6 +39,7 @@ class MyArgs:
         Flags.verbose = options.verbose
         Flags.debug = options.debug
         Flags.test = options.test
+        Flags.force = options.force
         Flags.config = options.config
         if Flags.config is not None:
             cf = rb.ReadJson('.', '.', Flags.config)

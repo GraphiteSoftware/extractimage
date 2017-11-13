@@ -1,6 +1,4 @@
-import json
 import magic
-from optparse import OptionParser
 import ericbase as eb
 import os.path
 import fnmatch
@@ -10,6 +8,8 @@ import sys
 import os
 import errno
 from sys import platform as _platform
+import argbase as arg
+import readbase as rb
 
 # define global variables
 # options as globals
@@ -23,6 +23,10 @@ output_dict = {}
 patternimg = '*.img'
 patterndat = '*.dat'
 patternversion = r"V(\d*\.\d*\.\d*\.\d*)"
+usagemsg = "This program looks for data or Android sparse images, extract the image to a raw, " \
+           "mountable format and then mounts the image to a known directory" \
+           "Here is the sequence or processing:\n" \
+           "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
 
 
 # app/Spaces*/Spaces*.apk
@@ -31,38 +35,40 @@ patternversion = r"V(\d*\.\d*\.\d*\.\d*)"
 
 def main():
     """main processing loop"""
-    do = MyArgs()
+    do = arg.MyArgs(usagemsg)
     do.processargs()
-    if Flags.test:
+    if arg.Flags.test:
         print(VERBOSE, "Running in Test Mode")
-    if Flags.debug:
+    if arg.Flags.debug:
         print(DEBUG,
               "Flags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
-                  Flags.verbose, Flags.debug, Flags.test, Flags.config, Flags.configsettings))
+                  arg.Flags.verbose, arg.Flags.debug, arg.Flags.test, arg.Flags.config, arg.Flags.configsettings))
 
     if _platform == "linux" or _platform == "linux2":
         # linux
-        Flags.ubuntu = True
+        arg.Flags.ubuntu = True
     elif _platform == "darwin":
         # MAC OS X
-        Flags.macos = True
+        arg.Flags.macos = True
     else:
         # Windows - will not work
         eb.printerror("This programs will only run correctly on Linux or Mac OS based systems")
-    rw = ReadJson(Flags.configsettings['root'], Flags.configsettings['data'], Flags.configsettings['links'])
+    rw = rb.ReadJson(arg.Flags.configsettings['root'],
+                     arg.Flags.configsettings['data'],
+                     arg.Flags.configsettings['links'])
     rw.readinput()
     modelstoprocess = len(rw.data)
     for idx, line in enumerate(rw.data):
-        if Flags.verbose:
+        if arg.Flags.verbose:
             print(VERBOSE, "Processing model {} of {}".format(idx + 1, modelstoprocess))
         model = rw.data[line]['name']
         for i in rw.data[line]['images']:
             file_name = extractgroup(re.search(r"http://.*/(.*)", i['image']))
-            pf = ProcessImage(Flags.configsettings['root'], Flags.configsettings['extractimages'],
-                              Flags.configsettings['extractimages'], file_name, model, i['region'], i['channel'],
+            pf = ProcessImage(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractimages'],
+                              arg.Flags.configsettings['extractimages'], file_name, model, i['region'], i['channel'],
                               False)
             pf.processfile()
-        if Flags.test:
+        if arg.Flags.test:
             break
 
 
@@ -90,16 +96,16 @@ def getfilelist(filepath) -> list:
 
 
 class ProcessImage:
-    def __init__(self, root: str, imgdir: str, extractdir: str, filename: str, model: str, region: str, channel: str,
-                 all: bool):
-        self.file = os.path.join(root, imgdir, filename)
-        self.extractpath = os.path.join(root, extractdir)
-        self.mountpath = os.path.join(root, 'tmp')
-        self.propspath = os.path.join(root, 'extracted_props')
+    def __init__(self, rt: str, imgdir: str, extractdir: str, filename: str, model: str, region: str, channel: str,
+                 doall: bool):
+        self.file = os.path.join(rt, imgdir, filename)
+        self.extractpath = os.path.join(rt, extractdir)
+        self.mountpath = os.path.join(rt, 'tmp')
+        self.propspath = os.path.join(rt, 'extracted_props')
         self.model = model
         self.region = region
         self.channel = channel
-        self.processall = all
+        self.processall = doall
         self.sysdatname = 'system.new.dat'
         self.transferlistname = 'system.transfer.list'
         self.sysimgname = 'system.img'
@@ -116,7 +122,7 @@ class ProcessImage:
             if self.channel.lower() == 'stable':
                 return True
         else:
-            if Flags.verbose:
+            if arg.Flags.verbose:
                 dl_message = "Could not find file: [" + self.file + "]" + self.model + ", " + self.region + ", " + \
                              self.channel
                 print(WARNING, dl_message)
@@ -124,7 +130,6 @@ class ProcessImage:
 
     def makedirname(self) -> str:
         version = extractgroup(re.search(patternversion, self.file))
-        d = ''
         if version is None:
             d = self.model.replace(' ', '') + self.region.replace(' ', '').title() + self.channel.replace(' ', '')
         else:
@@ -132,54 +137,55 @@ class ProcessImage:
                                                                                                           '') + version
         return d
 
-    def buildcommand(self, type: str, src: str, dest: str) -> list:
+    @staticmethod
+    def buildcommand(typ: str, src: str, dest: str) -> list:
         cmd = []
-        if Flags.macos:
-            if type == 'unzip':
+        if arg.Flags.macos:
+            if typ == 'unzip':
                 cmd = ['unzip', src, '-d', dest]
-            elif type == 'mount':
+            elif typ == 'mount':
                 cmd = ['ext4fuse', src, dest]
-            elif type == 'unmount':
+            elif typ == 'unmount':
                 cmd = ['umount', dest]
-            elif type == 'copy':
+            elif typ == 'copy':
                 cmd = ['cp', src, dest]
-        if Flags.ubuntu:
-            if type == 'unzip':
+        if arg.Flags.ubuntu:
+            if typ == 'unzip':
                 cmd = ['unzip', src, '-d', dest]
-            elif type == 'mount':
+            elif typ == 'mount':
                 cmd = ['sudo', 'mount', '-t', 'ext4', src, dest]
-            elif type == 'unmount':
+            elif typ == 'unmount':
                 cmd = ['sudo', 'umount', dest]
-            elif type == 'copy':
+            elif typ == 'copy':
                 cmd = ['cp', src, dest]
-        if Flags.debug:
+        if arg.Flags.debug:
             print("COMMAND is:", cmd)
         return cmd
 
     def processfile(self):
         """processing the downloaded zip/tar file"""
         if self.checkfile():
-            if Flags.debug:
+            if arg.Flags.debug:
                 dl_message = "Found and processing: " + self.model + ", " + self.region + ", " + \
                              self.channel + " File: [" + self.file + "]"
                 print(DEBUG, dl_message)
 
             file_type = magic.from_file(self.file)
-            if Flags.debug:
+            if arg.Flags.debug:
                 print(DEBUG, "\t[{}] is type [{}]".format(self.file, file_type))
             if file_type[:4] == 'gzip':
                 # tgz file - we don't do those yet (only one in the file)
-                if Flags.verbose:
+                if arg.Flags.verbose:
                     print(VERBOSE, "File is Tar GZ format. SKIPPING:", self.file)
 
             if file_type[-5:] == '(JAR)':
                 # zip file - use unzip
                 dirname = os.path.join(self.extractpath, self.makedirname())
-                if Flags.verbose:
+                if arg.Flags.verbose:
                     print("Processing:", self.file, "(" + file_type + ") as ZIP into [" + dirname + "]")
                 if os.path.isdir(dirname):
                     # directory exists, probably extracted already, skip to find system.new.dat
-                    if Flags.verbose:
+                    if arg.Flags.verbose:
                         print(VERBOSE, "Extraction directory [" + dirname + "] for", self.file,
                               "already exists. SKIPPING")
                 else:
@@ -192,7 +198,7 @@ class ProcessImage:
                 if not os.path.isfile(outputpath):
                     # system image does not exist - extract it
                     if os.path.isfile(sysdatpath):
-                        if Flags.verbose:
+                        if arg.Flags.verbose:
                             print(VERBOSE, "Found", self.sysdatname, "in", dirname)
                         # check that we have the transfer list
                         if os.path.isfile(transferlistpath):
@@ -209,7 +215,7 @@ class ProcessImage:
                         return 2
                 else:
                     # system img already exists - process it
-                    if Flags.verbose:
+                    if arg.Flags.verbose:
                         print(VERBOSE, "Found an existing", outputpath, "looking for", self.buildpropname,
                               "in that file")
                 # now we have a known image file
@@ -220,81 +226,13 @@ class ProcessImage:
                 if os.path.isfile(buildpropspath):
                     # found the build props file
                     subprocess.run(self.buildcommand('copy', buildpropspath, bpoutputpath))
-                    if Flags.verbose:
+                    if arg.Flags.verbose:
                         print(VERBOSE, "Found and copied", buildpropspath, "to", bpoutputpath)
                 else:
                     print(ERROR, "Did not find", buildpropspath)
                 # unmount the image
                 subprocess.run(self.buildcommand('unmount', '', self.mountpath))
         return 0
-
-
-class ReadJson:
-    def __init__(self, rootpath: str, datapath: str, infile: str):
-        if rootpath is None:
-            self.root_path = '.'
-        else:
-            self.root_path = rootpath
-        if infile is None:
-            self.json = 'linklist.json'
-        else:
-            self.json = infile
-        if datapath is None:
-            self.data_path = '.'
-        else:
-            self.data_path = datapath
-        self.data = {}
-
-    def __str__(self) -> str:
-        return "Input file is: " + os.path.join(self.root_path, self.data_path, self.json, )
-
-    def readinput(self):
-        """read a file"""
-        json_file = os.path.join(self.root_path, self.data_path, self.json)
-        try:
-            json_fh = open(json_file, "r")
-        except IOError as err:
-            print(ERROR, "Failed to open input file", json_file)
-            print(ERROR, err.errno, err.filename, err.strerror)
-            sys.exit(1)
-        self.data = json.load(json_fh)
-        json_fh.close()
-        if Flags.debug:
-            print(DEBUG, "Got json input file", json_file)
-
-
-class WriteJson:
-    def __init__(self, rootpath: str, datapath: str, outfile: str):
-        if rootpath is None:
-            self.root_path = '.'
-        else:
-            self.root_path = rootpath
-        if outfile is None:
-            self.json = 'output.json'
-        else:
-            self.json = outfile
-        if datapath is None:
-            self.data_path = '.'
-        else:
-            self.data_path = datapath
-        self.data = {}
-
-    def __str__(self) -> str:
-        return "Output file is: " + os.path.join(self.root_path, self.data_path, self.json, )
-
-    def writeoutput(self):
-        """write the build props to the json file"""
-        if Flags.debug:
-            print(DEBUG, self.data)
-        json_file = os.path.join(self.root_path, self.data_path, self.json)
-        try:
-            json_fh = open(json_file, "w")
-        except IOError as err:
-            print(ERROR, "Failed to open output file", json_file)
-            print(ERROR, err.errno, err.filename, err.strerror)
-            sys.exit(1)
-        json.dump(self.data, json_fh, indent=4)
-        json_fh.close()
 
 
 def extractgroups(match):
@@ -311,54 +249,6 @@ def extractgroup(match):
     return match.group(1)
 
 
-class Flags:
-    verbose = False
-    debug = False
-    test = False
-    config = None
-    configsettings = {}
-    ubuntu = False
-    macos = False
-
-
-class MyArgs:
-    def __init__(self):
-        # Specifc to this program
-
-        # Usual suspects
-        self.usagemsg = "This program looks for data or Android sparse images, extract the image to a raw, " \
-                        "mountable format and then mounts the image to a known directory"\
-                        "Here is the sequence or processing:\n" \
-                        "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
-
-    def processargs(self):
-        """process arguments and options"""
-        parser = OptionParser(self.usagemsg)
-        parser.add_option("-v", "--verbose", dest="verbose", action="store_true", default=False,
-                          help="Print out helpful information during processing")
-        parser.add_option("-d", "--debug", dest="debug", action="store_true", default=False,
-                          help="Print out debug messages during processing")
-        parser.add_option("-t", "--test", dest="test", action="store_true", default=False,
-                          help="Use test file instead of full file list")
-        parser.add_option("-c", "--config", dest="config", default=None,
-                          help="Configuration file (JSON)", metavar="CONFIG")
-
-        options, args = parser.parse_args()
-        # required options checks
-        if options.debug:
-            options.verbose = True
-        Flags.verbose = options.verbose
-        Flags.debug = options.debug
-        Flags.test = options.test
-        Flags.config = options.config
-        if Flags.config is not None:
-            cf = ReadJson('.', '.', Flags.config)
-            cf.readinput()
-            Flags.configsettings = cf.data
-        else:
-            eb.printerror("Missing required configuration file (--config)")
-
-
 class SDat2Img:
     def __init__(self, transfer: str, datafile: str, outputfile: str):
         self.__version__ = '1.0'
@@ -367,7 +257,8 @@ class SDat2Img:
         self.OUTPUT_IMAGE_FILE = outputfile
         self.BLOCK_SIZE = 4096
 
-    def rangeset(self, src):
+    @staticmethod
+    def rangeset(src):
         src_set = src.split(',')
         num_set = [int(item) for item in src_set]
         if len(num_set) != num_set[0] + 1:

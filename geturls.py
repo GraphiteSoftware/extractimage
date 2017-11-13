@@ -12,10 +12,10 @@ VERBOSE = '[STATUS]'
 ERROR = '[ERROR]'
 
 usagemsg = "This program reads the Xiaomi download site, extracts the list of models and then" \
-                "extracts all of the image URLs from all of the download pages. "  \
-                "The URLS are written to a json file." \
-                "Here is the sequence or processing:\n" \
-                "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
+           "extracts all of the image URLs from all of the download pages. " \
+           "The URLS are written to a json file." \
+           "Here is the sequence of processing:\n" \
+           "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
 
 
 def main():
@@ -28,7 +28,8 @@ def main():
         print(DEBUG,
               "flag are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}\n\tConfig File: {}\n\tConfig Settings: {}".format(
                   arg.Flags.verbose, arg.Flags.debug, arg.Flags.test, arg.Flags.config, arg.Flags.configsettings))
-    writefile = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'], arg.Flags.configsettings['model'])
+    writefile = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],
+                             arg.Flags.configsettings['model'])
     phonelist = []
     foundmatch = False
 
@@ -63,7 +64,8 @@ def main():
 
     # instead of writing the model file - do the extract url processes from extracttext.py
     image_dict = {}
-    outf = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'], arg.Flags.configsettings['links'])
+    outf = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],
+                        arg.Flags.configsettings['links'])
     for line in writefile.data:
         image_dict[line['name']] = processline(line['pid'], line['name'])
     outf.data = image_dict
