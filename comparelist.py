@@ -14,7 +14,8 @@ DEBUG = '[DEBUG]'
 VERBOSE = '[STATUS]'
 ERROR = '[ERROR]'
 
-usagemsg = "This program compares 2 files that contain a URL list from the Xiaomi Download pages."
+usagemsg = "This program compares 2 files that contain a URL list from the Xiaomi Download pages." \
+            "If run without --verbose it will print the number of changed files and output the compare file"
 
 patternimg = '*.img'
 patterndat = '*.dat'
@@ -35,6 +36,7 @@ def main():
     o1 = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['compareoutput'])
     l1.readinput()
     l2.readinput()
+    changedcount = 0
     # check for items from the old file to see if they are in the new file
     for item in l1.data:
         if item in l2.data:
@@ -52,6 +54,7 @@ def main():
                 o1.data[olditem]['status'] = 'changed'
                 o1.data[newitem] = l2.data[item]
                 o1.data[newitem]['status'] = 'changed'
+                changedcount += 1
                 if arg.Flags.verbose:
                     changed = whatchanged(l1.data[item], l2.data[item])
                     print(VERBOSE, "Changed for", item)
@@ -78,9 +81,11 @@ def main():
                 print("Did NOT find", item, "in", arg.Flags.configsettings['link1'], "- this is a new item, report it")
             o1.data[item] = l2.data[item]
             o1.data[item]['status'] = 'added'
+            changedcount += 1
             if arg.Flags.verbose:
                 print(VERBOSE, "New", item)
     o1.writeoutput()
+    print(changedcount)
 
 
 def whatchanged(old, new) -> list:
