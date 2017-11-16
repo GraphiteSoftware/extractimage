@@ -15,7 +15,7 @@ usagemsg = "This program reads the Xiaomi download site, extracts the list of mo
            "extracts all of the image URLs from all of the download pages. " \
            "The URLS are written to a json file." \
            "Here is the sequence of processing:\n" \
-           "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
+                "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py\n\tbuildproptocsv.py"
 
 
 def main():

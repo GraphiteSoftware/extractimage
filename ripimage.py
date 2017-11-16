@@ -13,7 +13,7 @@ VERBOSE = '[STATUS]'
 ERROR = '[ERROR]'
 usagemsg = "This program downloads the image files as listed in the link file" \
            "Here is the sequence of processing:\n" \
-           "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py"
+                "\tgeturls.py\n\tripimage.py\n\tmountimages.py\n\tparsebuildprop.py\n\tbuildproptocsv.py"
 
 
 def main():
