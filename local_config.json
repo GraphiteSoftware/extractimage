@@ -1,12 +1,12 @@
 {
   "root": ".",
-  "images": "xiaomi-images",
-  "data": "xiaomi-data",
+  "images": ".",
+  "data": ".",
   "links": "linklist-test.json",
   "mount": "tmp",
-  "extractimages": "extracted-images",
-  "extractprops": "extracted-props",
+  "extractimages": ".",
+  "extractprops": ".",
   "xmonly": true,
   "model": "modellist-test.json",
-  "output": "allchksum-test.json"
+  "output": "allprops.json"
 }

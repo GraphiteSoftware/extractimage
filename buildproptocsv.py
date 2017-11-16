@@ -32,8 +32,10 @@ def main():
     rd = rb.ReadJson(arg.Flags.configsettings['root'],
                      arg.Flags.configsettings['extractprops'],
                      arg.Flags.configsettings['output'])
-    for prop in rd.readinput():
-        addprop(prop)
+    rd.readinput()
+    for prop in rd.data:
+        addprop(rd.data[prop])
+    CSV.file = arg.Flags.configsettings['output'][:-4] + 'csv'
     writecsv()
 
 
@@ -79,6 +81,7 @@ class CSV:
 
 
 def addprop(p: dict):
+    print(p)
     proplist = [p['model'], p['region'], p['channel'], p['version']]
     for k in CSV.propsummary:
         if k in p['props']:
