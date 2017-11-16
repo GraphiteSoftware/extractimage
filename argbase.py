@@ -3,6 +3,7 @@ import readbase as rb
 import ericbase as eb
 from sys import platform as _platform
 import json
+import sys
 
 
 class Flags:
@@ -13,15 +14,20 @@ class Flags:
     config = None
     ubuntu = False
     macos = False
+    error = False
     configsettings = {}
 
 
 class MyArgs:
     def __init__(self, use):
         self.usagemsg = use
+        self.TEST = '[TEST]'
+        self.DEBUG = '[DEBUG]'
+        self.VERBOSE = '[STATUS]'
+        self.ERROR = '[ERROR]'
 
     def __str__(self):
-        argstring = "[DEBUG] Program Arguments:"
+        argstring = "Program Arguments:"
         argstring = argstring + "\nFlags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}".format(Flags.verbose,
                                                                                  Flags.debug,
                                                                                  Flags.test)
@@ -71,3 +77,11 @@ class MyArgs:
             Flags.configsettings = cf.data
         else:
             eb.printerror("Missing required configuration file (--config)")
+
+
+    def message(self, flag, status, msg: str):
+        if flag:
+            print(status, msg)
+        if status == '[ERROR]':
+            sys.exit(2)
+

@@ -10,10 +10,6 @@ import argbase as arg
 
 # define global variables
 # options as globals
-DEBUG = '[DEBUG]'
-VERBOSE = '[STATUS]'
-ERROR = '[ERROR]'
-
 usagemsg = "This program compares 2 files that contain a URL list from the Xiaomi Download pages." \
             "If run without --verbose it will print the number of changed files and output the compare file"
 
@@ -26,10 +22,9 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    if arg.Flags.test:
-        print(VERBOSE, "Running in Test Mode")
-    if arg.Flags.debug:
-        print(do)
+    do.message(arg.Flags.test, do.TEST, "Running in test mode")
+    do.message(arg.Flags.debug, do.DEBUG, do)
+    do.message(arg.Flags.verbose, do.VERBOSE, "Test Message")
 
     l1 = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'], arg.Flags.configsettings['link1'])
     l2 = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],  arg.Flags.configsettings['link2'])
@@ -41,13 +36,11 @@ def main():
     for item in l1.data:
         if item in l2.data:
             if l1.data[item] == l2.data[item]:
-                if arg.Flags.debug:
-                    print("Found", item, "in", arg.Flags.configsettings['link2'], "- it is the same")
+                do.message(arg.Flags.debug, do.DEBUG, ' '.join(["Found", item, "in", arg.Flags.configsettings['link2'], "- it is the same"]))
                 o1.data[item] = l1.data[item]
                 o1.data[item]['status'] = 'unchanged'
             else:
-                if arg.Flags.debug:
-                    print("Found", item, "in", arg.Flags.configsettings['link2'], "- it is changed")
+                do.message(arg.Flags.debug, do.DEBUG, ' '.join(["Found", item, "in", arg.Flags.configsettings['link2'], "- it is changed"]))
                 olditem = str(item) + '-old'
                 newitem = str(item) + '-new'
                 o1.data[olditem] = l1.data[item]
@@ -57,7 +50,7 @@ def main():
                 changedcount += 1
                 if arg.Flags.verbose:
                     changed = whatchanged(l1.data[item], l2.data[item])
-                    print(VERBOSE, "Changed for", item)
+                    do.message(arg.Flags.verbose, do.VERBOSE, "Changed for " + item)
                     for changeline in changed:
                         chan, reg = changeline[0].split(":")
                         if changeline[1] == '':
@@ -68,22 +61,18 @@ def main():
                             print(
                                 "\t{} {} CHANGED from version {} to {}".format(chan, reg, changeline[1], changeline[2]))
         else:
-            if arg.Flags.debug:
-                print("Did NOT find", item, "in", arg.Flags.configsettings['link2'], "- report it as removed")
+            do.message(arg.Flags.debug, do.DEBUG, ' '.join(["Did NOT find", item, "in", arg.Flags.configsettings['link2'], "- report it as removed"]))
             o1.data[item] = l1.data[item]
             o1.data[item]['status'] = 'removed'
-            if arg.Flags.verbose:
-                print(VERBOSE, "Removed", item)
+            do.message(arg.Flags.verbose, do.VERBOSE, "Removed " + item)
     # check for any that are in the new file, but not in the old file
     for item in l2.data:
         if item not in l1.data:
-            if arg.Flags.debug:
-                print("Did NOT find", item, "in", arg.Flags.configsettings['link1'], "- this is a new item, report it")
+            do.message(arg.Flags.debug, do.DEBUG, ' '.join(["Did NOT find", item, "in", arg.Flags.configsettings['link1'], "- this is a new item, report it"]))
             o1.data[item] = l2.data[item]
             o1.data[item]['status'] = 'added'
             changedcount += 1
-            if arg.Flags.verbose:
-                print(VERBOSE, "New", item)
+            do.message(arg.Flags.verbose, do.VERBOSE, "New " + item)
     o1.writeoutput()
     print(changedcount)
 
