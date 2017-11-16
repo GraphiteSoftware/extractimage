@@ -31,9 +31,9 @@ def main():
     if arg.Flags.debug:
         print(do)
 
-    l1 = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['link1'])
-    l2 = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['link2'])
-    o1 = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['compareoutput'])
+    l1 = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'], arg.Flags.configsettings['link1'])
+    l2 = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],  arg.Flags.configsettings['link2'])
+    o1 = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],  arg.Flags.configsettings['compareoutput'])
     l1.readinput()
     l2.readinput()
     changedcount = 0

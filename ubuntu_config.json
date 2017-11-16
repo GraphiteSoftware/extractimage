@@ -5,7 +5,7 @@
   "links": "linklist-20171116.json",
   "link1": "linklist-20171107.json",
   "link2": "linklist-20171116.json",
-  "compareoutput": "linkcompare-20171116.json"
+  "compareoutput": "linkcompare-20171116.json",
   "mount": "tmp",
   "extractimages": "extracted_images",
   "extractprops": "extracted_props",
