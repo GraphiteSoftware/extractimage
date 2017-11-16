@@ -29,7 +29,7 @@ def main():
         print(do)
 
     output_dict = {}
-    rd = rb.ReadJson(arg.Flags.configsettings['root'],
+    rd = rb.ReadPlain(arg.Flags.configsettings['root'],
                      arg.Flags.configsettings['extractprops'],
                      '')
     wd = rb.WriteJson(arg.Flags.configsettings['root'],
@@ -40,8 +40,8 @@ def main():
         line_dict = {}
         if arg.Flags.debug:
             print(DEBUG, propfile.rstrip())
-        rd.json = propfile
-        d = rd.readinput()
+        rd.plain = propfile
+        rd.readinput()
         head, file = os.path.split(propfile)
         if file != '':
             imgfields = splitfilename(file)
@@ -49,7 +49,7 @@ def main():
             if arg.Flags.debug:
                 print(WARNING, "bad file name in", propfile)
             imgfields = {"model": '', "region": '', "channel": '', "version": ''}
-        for line in d:
+        for line in rd.data:
             if line[0] == '#':
                 if arg.Flags.test:
                     print("Comment line")
