@@ -1,8 +1,5 @@
 import csv
-import ericbase as eb
 import os.path
-import re
-import fnmatch
 import argbase as arg
 import readbase as rb
 
@@ -28,7 +25,6 @@ def main():
     if arg.Flags.debug:
         print(do)
 
-    output_dict = {}
     rd = rb.ReadJson(arg.Flags.configsettings['root'],
                      arg.Flags.configsettings['extractprops'],
                      arg.Flags.configsettings['output'])
