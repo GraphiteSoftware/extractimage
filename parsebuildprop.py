@@ -1,4 +1,3 @@
-import ericbase as eb
 import os.path
 import re
 import fnmatch
@@ -23,10 +22,8 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    if arg.Flags.test:
-        print(VERBOSE, "Running in Test Mode")
-    if arg.Flags.debug:
-        print(do)
+    arg.MSG.TEST("Running in test mode")
+    arg.MSG.DEBUG(str(do))
 
     output_dict = {}
     rd = rb.ReadPlain(arg.Flags.configsettings['root'],
@@ -38,16 +35,14 @@ def main():
     listofprops = getfilelist(os.path.join(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractprops']))
     for propfile in listofprops:
         line_dict = {}
-        if arg.Flags.debug:
-            print(DEBUG, propfile.rstrip())
+        arg.MSG.DEBUG(propfile.rstrip())
         rd.plain = propfile
         rd.readinput()
         head, file = os.path.split(propfile)
         if file != '':
             imgfields = splitfilename(file)
         else:
-            if arg.Flags.debug:
-                print(WARNING, "bad file name in", propfile)
+            arg.MSG.DEBUG("Bad file name in" + propfile)
             imgfields = {"model": '', "region": '', "channel": '', "version": ''}
         for line in rd.data:
             if line[0] == '#':
@@ -58,8 +53,7 @@ def main():
             else:
                 prop = extractgroups(re.search(re_datetime, line))
                 if prop is not None:
-                    if arg.Flags.test:
-                        print("Found {} = {}".format(prop[0], prop[1]))
+                    arg.MSG.TEST("Found {} = {}".format(prop[0], prop[1]))
                     line_dict[prop[0]] = prop[1]
         imgfields['props'] = line_dict
         output_dict[file] = imgfields
@@ -83,7 +77,7 @@ def getfilelist(filepath) -> list:
     fl = []
     patternprop = r"*build.prop"
     if not os.path.isdir(filepath):
-        eb.printerror("Build Props directory does not exist or is not mounted: " + filepath)
+        arg.MSG.ERROR("Build Props directory does not exist or is not mounted: " + filepath)
     else:
         for file in os.listdir(filepath):
             # print("Checking: ", file)

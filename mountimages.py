@@ -31,10 +31,8 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    if arg.Flags.test:
-        print(VERBOSE, "Running in Test Mode")
-    if arg.Flags.debug:
-        print(do)
+    arg.MSG.TEST("Running in test mode")
+    arg.MSG.DEBUG(str(do))
 
     rw = rb.ReadJson(arg.Flags.configsettings['root'],
                      arg.Flags.configsettings['data'],
@@ -42,8 +40,7 @@ def main():
     rw.readinput()
     modelstoprocess = len(rw.data)
     for idx, line in enumerate(rw.data):
-        if arg.Flags.verbose:
-            print(VERBOSE, "Processing model {} of {}".format(idx + 1, modelstoprocess))
+        arg.MSG.VERBOSE("Processing model {} of {}".format(idx + 1, modelstoprocess))
         model = rw.data[line]['name']
         for i in rw.data[line]['images']:
             file_name = extractgroup(re.search(r"http://.*/(.*)", i['image']))
@@ -105,10 +102,10 @@ class ProcessImage:
             if self.channel.lower() == 'stable':
                 return True
         else:
-            if arg.Flags.verbose:
-                dl_message = "Could not find file: [" + self.file + "]" + self.model + ", " + self.region + ", " + \
-                             self.channel
-                print(WARNING, dl_message)
+            arg.MSG.VERBOSE("Could not find file: [{}] ({}, {}, {})".format(self.file,
+                                                                            self.model,
+                                                                            self.region,
+                                                                            self.channel))
         return False
 
     def makedirname(self) -> str:
@@ -148,29 +145,23 @@ class ProcessImage:
     def processfile(self):
         """processing the downloaded zip/tar file"""
         if self.checkfile():
-            if arg.Flags.debug:
-                dl_message = "Found and processing: " + self.model + ", " + self.region + ", " + \
-                             self.channel + " File: [" + self.file + "]"
-                print(DEBUG, dl_message)
-
+            arg.MSG.DEBUG("Found and processing: [{}] ({}, {}, {})".format(self.file,
+                                                                            self.model,
+                                                                            self.region,
+                                                                            self.channel))
             file_type = magic.from_file(self.file)
             if arg.Flags.debug:
                 print(DEBUG, "\t[{}] is type [{}]".format(self.file, file_type))
             if file_type[:4] == 'gzip':
                 # tgz file - we don't do those yet (only one in the file)
-                if arg.Flags.verbose:
-                    print(VERBOSE, "File is Tar GZ format. SKIPPING:", self.file)
-
+                arg.MSG.VERBOSE("File is Tar GZ format. SKIPPING: [{}]".format(self.file))
             if file_type[-5:] == '(JAR)':
                 # zip file - use unzip
                 dirname = os.path.join(self.extractpath, self.makedirname())
-                if arg.Flags.verbose:
-                    print("Processing:", self.file, "(" + file_type + ") as ZIP into [" + dirname + "]")
+                arg.MSG.VERBOSE("Processing: [{}] ({} as ZIP into [{}])".format(self.file, file_type, dirname))
                 if os.path.isdir(dirname):
                     # directory exists, probably extracted already, skip to find system.new.dat
-                    if arg.Flags.verbose:
-                        print(VERBOSE, "Extraction directory [" + dirname + "] for", self.file,
-                              "already exists. SKIPPING")
+                    arg.MSG.VERBOSE("Extraction directory [{}] for {} already exists. SKIPPING".format(dirname, self.file))
                 else:
                     subprocess.run(self.buildcommand('unzip', self.file, dirname))
 
@@ -181,8 +172,7 @@ class ProcessImage:
                 if not os.path.isfile(outputpath):
                     # system image does not exist - extract it
                     if os.path.isfile(sysdatpath):
-                        if arg.Flags.verbose:
-                            print(VERBOSE, "Found", self.sysdatname, "in", dirname)
+                        arg.MSG.VERBOSE("Found {} in {}".format(self.sysdatname, dirname))
                         # check that we have the transfer list
                         if os.path.isfile(transferlistpath):
                             # all good
@@ -190,17 +180,15 @@ class ProcessImage:
                             simg.sdat2img_main()
                         else:
                             # something is wrong
-                            print(ERROR, "Could not find", transferlistpath)
+                            arg.MSG.ERROR("Could not find {}".format(transferlistpath))
                             return 1
                     else:
                         # something is wrong
-                        print(ERROR, "Could not find", sysdatpath)
+                        arg.MSG.ERROR("Could not find {}".format(sysdatpath))
                         return 2
                 else:
                     # system img already exists - process it
-                    if arg.Flags.verbose:
-                        print(VERBOSE, "Found an existing", outputpath, "looking for", self.buildpropname,
-                              "in that file")
+                    arg.MSG.VERBOSE("Found an existing {}, looking for {} in that file".format(outputpath, self.buildpropname))
                 # now we have a known image file
                 subprocess.run(self.buildcommand('mount', outputpath, self.mountpath))
                 buildpropspath = os.path.join(self.mountpath, self.buildpropname)
@@ -209,10 +197,9 @@ class ProcessImage:
                 if os.path.isfile(buildpropspath):
                     # found the build props file
                     subprocess.run(self.buildcommand('copy', buildpropspath, bpoutputpath))
-                    if arg.Flags.verbose:
-                        print(VERBOSE, "Found and copied", buildpropspath, "to", bpoutputpath)
+                    arg.MSG.VERBOSE("Found and copied {} to {}".format(buildpropspath, bpoutputpath))
                 else:
-                    print(ERROR, "Did not find", buildpropspath)
+                    arg.MSG.ERROR("Could not find {}".format(buildpropspath))
                 # unmount the image
                 subprocess.run(self.buildcommand('unmount', '', self.mountpath))
         return 0
@@ -245,7 +232,7 @@ class SDat2Img:
         src_set = src.split(',')
         num_set = [int(item) for item in src_set]
         if len(num_set) != num_set[0] + 1:
-            print(ERROR, 'Error on parsing following data to rangeset:\n%s' % src)
+            arg.MSG.ERROR("Error on parsing following data to rangeset:\n{}".format(src))
             sys.exit(1)
 
         return tuple([(num_set[i], num_set[i + 1]) for i in range(1, len(num_set), 2)])
