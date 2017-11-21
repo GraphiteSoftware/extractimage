@@ -31,8 +31,9 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    arg.MSG.TEST("Running in test mode")
-    arg.MSG.DEBUG(str(do))
+    msg = arg.MSG()
+    msg.TEST("Running in test mode")
+    msg.DEBUG(do)
 
     rw = rb.ReadJson(arg.Flags.configsettings['root'],
                      arg.Flags.configsettings['data'],
@@ -40,7 +41,7 @@ def main():
     rw.readinput()
     modelstoprocess = len(rw.data)
     for idx, line in enumerate(rw.data):
-        arg.MSG.VERBOSE("Processing model {} of {}".format(idx + 1, modelstoprocess))
+        msg.VERBOSE("Processing model {} of {}".format(idx + 1, modelstoprocess))
         model = rw.data[line]['name']
         for i in rw.data[line]['images']:
             file_name = extractgroup(re.search(r"http://.*/(.*)", i['image']))
@@ -102,7 +103,7 @@ class ProcessImage:
             if self.channel.lower() == 'stable':
                 return True
         else:
-            arg.MSG.VERBOSE("Could not find file: [{}] ({}, {}, {})".format(self.file,
+            msg.VERBOSE("Could not find file: [{}] ({}, {}, {})".format(self.file,
                                                                             self.model,
                                                                             self.region,
                                                                             self.channel))
@@ -145,7 +146,7 @@ class ProcessImage:
     def processfile(self):
         """processing the downloaded zip/tar file"""
         if self.checkfile():
-            arg.MSG.DEBUG("Found and processing: [{}] ({}, {}, {})".format(self.file,
+            msg.DEBUG("Found and processing: [{}] ({}, {}, {})".format(self.file,
                                                                             self.model,
                                                                             self.region,
                                                                             self.channel))
@@ -154,14 +155,14 @@ class ProcessImage:
                 print(DEBUG, "\t[{}] is type [{}]".format(self.file, file_type))
             if file_type[:4] == 'gzip':
                 # tgz file - we don't do those yet (only one in the file)
-                arg.MSG.VERBOSE("File is Tar GZ format. SKIPPING: [{}]".format(self.file))
+                msg.VERBOSE("File is Tar GZ format. SKIPPING: [{}]".format(self.file))
             if file_type[-5:] == '(JAR)':
                 # zip file - use unzip
                 dirname = os.path.join(self.extractpath, self.makedirname())
-                arg.MSG.VERBOSE("Processing: [{}] ({} as ZIP into [{}])".format(self.file, file_type, dirname))
+                msg.VERBOSE("Processing: [{}] ({} as ZIP into [{}])".format(self.file, file_type, dirname))
                 if os.path.isdir(dirname):
                     # directory exists, probably extracted already, skip to find system.new.dat
-                    arg.MSG.VERBOSE("Extraction directory [{}] for {} already exists. SKIPPING".format(dirname, self.file))
+                    msg.VERBOSE("Extraction directory [{}] for {} already exists. SKIPPING".format(dirname, self.file))
                 else:
                     subprocess.run(self.buildcommand('unzip', self.file, dirname))
 
@@ -172,7 +173,7 @@ class ProcessImage:
                 if not os.path.isfile(outputpath):
                     # system image does not exist - extract it
                     if os.path.isfile(sysdatpath):
-                        arg.MSG.VERBOSE("Found {} in {}".format(self.sysdatname, dirname))
+                        msg.VERBOSE("Found {} in {}".format(self.sysdatname, dirname))
                         # check that we have the transfer list
                         if os.path.isfile(transferlistpath):
                             # all good
@@ -180,15 +181,15 @@ class ProcessImage:
                             simg.sdat2img_main()
                         else:
                             # something is wrong
-                            arg.MSG.ERROR("Could not find {}".format(transferlistpath))
+                            msg.ERROR("Could not find {}".format(transferlistpath))
                             return 1
                     else:
                         # something is wrong
-                        arg.MSG.ERROR("Could not find {}".format(sysdatpath))
+                        msg.ERROR("Could not find {}".format(sysdatpath))
                         return 2
                 else:
                     # system img already exists - process it
-                    arg.MSG.VERBOSE("Found an existing {}, looking for {} in that file".format(outputpath, self.buildpropname))
+                    msg.VERBOSE("Found an existing {}, looking for {} in that file".format(outputpath, self.buildpropname))
                 # now we have a known image file
                 subprocess.run(self.buildcommand('mount', outputpath, self.mountpath))
                 buildpropspath = os.path.join(self.mountpath, self.buildpropname)
@@ -197,9 +198,9 @@ class ProcessImage:
                 if os.path.isfile(buildpropspath):
                     # found the build props file
                     subprocess.run(self.buildcommand('copy', buildpropspath, bpoutputpath))
-                    arg.MSG.VERBOSE("Found and copied {} to {}".format(buildpropspath, bpoutputpath))
+                    msg.VERBOSE("Found and copied {} to {}".format(buildpropspath, bpoutputpath))
                 else:
-                    arg.MSG.ERROR("Could not find {}".format(buildpropspath))
+                    msg.ERROR("Could not find {}".format(buildpropspath))
                 # unmount the image
                 subprocess.run(self.buildcommand('unmount', '', self.mountpath))
         return 0
@@ -232,7 +233,7 @@ class SDat2Img:
         src_set = src.split(',')
         num_set = [int(item) for item in src_set]
         if len(num_set) != num_set[0] + 1:
-            arg.MSG.ERROR("Error on parsing following data to rangeset:\n{}".format(src))
+            msg.ERROR("Error on parsing following data to rangeset:\n{}".format(src))
             sys.exit(1)
 
         return tuple([(num_set[i], num_set[i + 1]) for i in range(1, len(num_set), 2)])

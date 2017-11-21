@@ -20,10 +20,9 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    if arg.Flags.test:
-        print(VERBOSE, "Running in Test Mode")
-    if arg.Flags.debug:
-        print(do)
+    msg = arg.MSG()
+    msg.TEST("Running in test mode")
+    msg.DEBUG(do)
 
     rd = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],
                      arg.Flags.configsettings['links'])

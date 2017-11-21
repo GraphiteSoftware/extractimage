@@ -22,8 +22,9 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    arg.MSG.TEST("Running in test mode")
-    arg.MSG.DEBUG(str(do))
+    msg = arg.MSG()
+    msg.TEST("Running in test mode")
+    msg.DEBUG(do)
 
     output_dict = {}
     rd = rb.ReadPlain(arg.Flags.configsettings['root'],
@@ -35,14 +36,14 @@ def main():
     listofprops = getfilelist(os.path.join(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractprops']))
     for propfile in listofprops:
         line_dict = {}
-        arg.MSG.DEBUG(propfile.rstrip())
+        msg.DEBUG(propfile.rstrip())
         rd.plain = propfile
         rd.readinput()
         head, file = os.path.split(propfile)
         if file != '':
             imgfields = splitfilename(file)
         else:
-            arg.MSG.DEBUG("Bad file name in" + propfile)
+            msg.DEBUG("Bad file name in" + propfile)
             imgfields = {"model": '', "region": '', "channel": '', "version": ''}
         for line in rd.data:
             if line[0] == '#':
@@ -53,7 +54,7 @@ def main():
             else:
                 prop = extractgroups(re.search(re_datetime, line))
                 if prop is not None:
-                    arg.MSG.TEST("Found {} = {}".format(prop[0], prop[1]))
+                    msg.TEST("Found {} = {}".format(prop[0], prop[1]))
                     line_dict[prop[0]] = prop[1]
         imgfields['props'] = line_dict
         output_dict[file] = imgfields
@@ -77,7 +78,7 @@ def getfilelist(filepath) -> list:
     fl = []
     patternprop = r"*build.prop"
     if not os.path.isdir(filepath):
-        arg.MSG.ERROR("Build Props directory does not exist or is not mounted: " + filepath)
+        msg.ERROR("Build Props directory does not exist or is not mounted: " + filepath)
     else:
         for file in os.listdir(filepath):
             # print("Checking: ", file)

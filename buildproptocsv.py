@@ -20,8 +20,9 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    arg.MSG.TEST("Running in test mode")
-    arg.MSG.DEBUG(str(do))
+    msg = arg.MSG()
+    msg.TEST("Running in test mode")
+    msg.DEBUG(do)
 
     rd = rb.ReadJson(arg.Flags.configsettings['root'],
                      arg.Flags.configsettings['extractprops'],

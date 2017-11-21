@@ -75,19 +75,19 @@ class MyArgs:
 
 
 class MSG:
-    def ERROR(msg: str):
+    def ERROR(self, msg):
         print('[ERROR]', msg)
         sys.exit(2)
 
-    def VERBOSE(msg: str):
+    def VERBOSE(self, msg):
         if Flags.verbose:
             print('[STATUS]', msg)
 
-    def DEBUG(msg: str):
+    def DEBUG(self, msg):
         if Flags.debug:
             print('[DEBUG]', msg)
 
-    def TEST(msg: str):
+    def TEST(self, msg):
         if Flags.test:
             print('[TEST]', msg)
 
