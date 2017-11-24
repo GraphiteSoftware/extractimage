@@ -22,10 +22,9 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    if arg.Flags.test:
-        print(VERBOSE, "Running in Test Mode")
-    if arg.Flags.debug:
-        print(do)
+    msg = arg.MSG()
+    msg.TEST("Running in test mode")
+    msg.DEBUG(do)
 
     writefile = rb.WriteJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],
                              arg.Flags.configsettings['model'])
@@ -41,20 +40,17 @@ def main():
         # print(d.text)
         vardata = extractgroup(re.search(r"var phones =(.*?);", d.text))
         if vardata is None:
-            if arg.Flags.debug:
-                print("No match on element", i)
+            msg.DEBUG("No match on element: {}".format(i))
             continue
         else:
-            if arg.Flags.debug:
-                print("Got a match on element:", i)
+            msg.DEBUG("Got a match on element: {}".format(i))
             phonelist = json.loads(vardata)
             foundmatch = True
             break
     if foundmatch:
-        if arg.Flags.debug:
-            print("\n\n\nPhone list is: \n", phonelist)
+        msg.DEBUG("\n\n\nPhone list is: \n{}".format(phonelist))
     else:
-        print("Did not find the phone list")
+        msg.ERROR("Did not find the phone list")
     if arg.Flags.configsettings['xmonly']:
         xmlist = extractxm(phonelist)
         writefile.data = xmlist
@@ -82,18 +78,15 @@ class Global:
 
 
 def walker(soup, ld):
+    global msg
     if soup.name is not None:
         for child in soup.children:
             if child.name == 'span':
                 # print("<SPAN>: ", child.text, child.attrs)
                 if bool(re.search(r"Global$", child.text)):
                     Global.global_id = 'content_' + child.get('id')
-                    if arg.Flags.debug:
-                        print("Found Global: " + child.text + " with id of: " + child.get('id'))
                 if bool(re.search(r"China", child.text)):
                     Global.china_id = 'content_' + child.get('id')
-                    if arg.Flags.debug:
-                        print("Found China: " + child.text + " with id of: " + child.get('id'))
 
             if child.name == 'div':
                 # print("<DIV>: ", child.text, child.attrs)
@@ -110,21 +103,22 @@ def walker(soup, ld):
                 if 'class' in child.attrs:
                     # print("Found a class of:", child.get('class'))
                     if 'btn_5' in child.get('class'):
-                        if arg.Flags.verbose:
-                            print("Processing", Global.channel, Global.processing, Global.model_name, "link of:",
-                                  child.get('href'))
-                            temp_d = {'image': child.get('href'), 'channel': Global.channel,
-                                      'region': Global.processing}
-                            ld['images'].append(temp_d)
+                        msg.VERBOSE("Processing {}, {}, {} link of: {}".format(Global.channel,
+                                                                               Global.processing,
+                                                                               Global.model_name,
+                                                                               child.get('href')))
+                        temp_d = {'image': child.get('href'), 'channel': Global.channel,
+                                  'region': Global.processing}
+                        ld['images'].append(temp_d)
             ld = walker(child, ld)
     return ld
 
 
 def processline(pid: str, n: str):
     """process the line by reading the html and extracting the information"""
+    global msg
     url = "http://en.miui.com/download-" + pid + ".html"
-    if arg.Flags.verbose:
-        print(VERBOSE, "Name: {} -> {}".format(n, url))
+    msg.VERBOSE("Name: {} -> {}".format(n, url))
     line_dict = dict(url=url, name=n, images=[])
 
     http = httplib2.Http()
@@ -139,13 +133,14 @@ def processline(pid: str, n: str):
 
 
 def extractxm(ph: list) -> list:
+    global msg
     xmlist = []
     for ent in ph:
         if arg.Flags.debug:
             if ent['type'] == "1":
-                print("Xiaomi device", ent['name'])
+                msg.DEBUG("Xiaomi device {}".format(ent['name']))
             else:
-                print("Got model type", ent['type'], ent['name'])
+                msg.DEBUG("Got model type {}, {}".format(ent['type'], ent['name']))
         if ent['type'] == '1':
             xmlist.append(ent)
     return xmlist

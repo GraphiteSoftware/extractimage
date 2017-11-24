@@ -96,6 +96,7 @@ class ProcessImage:
         return "File: " + self.file + "\nModel: " + self.model + "\nRegion: " + "\nChannel: " + self.channel
 
     def checkfile(self) -> bool:
+        global msg
         if os.path.isfile(self.file):
             # Process all or only stable
             if self.processall:
@@ -104,9 +105,9 @@ class ProcessImage:
                 return True
         else:
             msg.VERBOSE("Could not find file: [{}] ({}, {}, {})".format(self.file,
-                                                                            self.model,
-                                                                            self.region,
-                                                                            self.channel))
+                                                                        self.model,
+                                                                        self.region,
+                                                                        self.channel))
         return False
 
     def makedirname(self) -> str:
@@ -120,6 +121,7 @@ class ProcessImage:
 
     @staticmethod
     def buildcommand(typ: str, src: str, dest: str) -> list:
+        global msg
         cmd = []
         if arg.Flags.macos:
             if typ == 'unzip':
@@ -139,17 +141,17 @@ class ProcessImage:
                 cmd = ['sudo', 'umount', dest]
             elif typ == 'copy':
                 cmd = ['cp', src, dest]
-        if arg.Flags.debug:
-            print("COMMAND is:", cmd)
+        msg.DEBUG("COMMAND is : {}".format(cmd))
         return cmd
 
     def processfile(self):
         """processing the downloaded zip/tar file"""
+        global msg
         if self.checkfile():
             msg.DEBUG("Found and processing: [{}] ({}, {}, {})".format(self.file,
-                                                                            self.model,
-                                                                            self.region,
-                                                                            self.channel))
+                                                                       self.model,
+                                                                       self.region,
+                                                                       self.channel))
             file_type = magic.from_file(self.file)
             if arg.Flags.debug:
                 print(DEBUG, "\t[{}] is type [{}]".format(self.file, file_type))

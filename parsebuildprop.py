@@ -28,8 +28,8 @@ def main():
 
     output_dict = {}
     rd = rb.ReadPlain(arg.Flags.configsettings['root'],
-                     arg.Flags.configsettings['extractprops'],
-                     '')
+                      arg.Flags.configsettings['extractprops'],
+                      '')
     wd = rb.WriteJson(arg.Flags.configsettings['root'],
                       arg.Flags.configsettings['extractprops'],
                       arg.Flags.configsettings['output'])
@@ -48,7 +48,7 @@ def main():
         for line in rd.data:
             if line[0] == '#':
                 if arg.Flags.test:
-                    print("Comment line")
+                    msg.TEST("Comment line")
                 else:
                     continue
             else:
@@ -75,6 +75,7 @@ def splitfilename(f: str) -> dict:
 
 
 def getfilelist(filepath) -> list:
+    global msg
     fl = []
     patternprop = r"*build.prop"
     if not os.path.isdir(filepath):

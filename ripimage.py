@@ -33,18 +33,19 @@ def main():
         model = d[line]['name']
         for i in d[line]['images']:
             file_name = extractgroup(re.search(r"http:\/\/.*\/(.*)", i['image']))
-            if arg.Flags.debug:
-                print(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractedimages'], file_name)
+            msg.DEBUG("{}, {}, {}".format(arg.Flags.configsettings['root'],
+                                          arg.Flags.configsettings['extractedimages'],
+                                          file_name))
             file_path = os.path.join(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractimages'],
                                      file_name)
             if os.path.isfile(file_path) and not arg.Flags.force:
-                if arg.Flags.verbose:
-                    print("[STATUS] File exists. Not downloading. [{}]".format(file_path))
+                msg.VERBOSE("File exists. Not downloading. [{}]".format(file_path))
             else:
-                if arg.Flags.verbose:
-                    dl_message = "[STATUS] Downloading: " + i['image'] + " (" + model + ", " + i['region'] + ", " + i[
-                        'channel'] + ") to [" + file_path + "]"
-                    print(dl_message)
+                msg.VERBOSE("[STATUS] Downloading: {} ({}, {}, {}) to [{}]".format(i['image'],
+                                                                                   model,
+                                                                                   i['region'],
+                                                                                   i['channel'],
+                                                                                   file_path))
                 start = time.time()
                 urlretrieve(i['image'], file_path, reporthook)
                 end = time.time()
