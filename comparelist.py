@@ -1,35 +1,22 @@
-import json
-from optparse import OptionParser
-import ericbase as eb
 import os.path
 import re
-import sys
 import os
 import readbase as rb
 import argbase as arg
 
 # define global variables
 # options as globals
-DEBUG = '[DEBUG]'
-VERBOSE = '[STATUS]'
-ERROR = '[ERROR]'
-
 usagemsg = "This program compares 2 files that contain a URL list from the Xiaomi Download pages." \
             "If run without --verbose it will print the number of changed files and output the compare file"
-
-patternimg = '*.img'
-patterndat = '*.dat'
-patternversion = r"V(\d*\.\d*\.\d*\.\d*)"
 
 
 def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    if arg.Flags.test:
-        print(VERBOSE, "Running in Test Mode")
-    if arg.Flags.debug:
-        print(do)
+    msg = arg.MSG()
+    msg.TEST("Running in test mode")
+    msg.DEBUG(do)
 
     l1 = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'], arg.Flags.configsettings['link1'])
     l2 = rb.ReadJson(arg.Flags.configsettings['root'], arg.Flags.configsettings['data'],  arg.Flags.configsettings['link2'])
@@ -41,13 +28,11 @@ def main():
     for item in l1.data:
         if item in l2.data:
             if l1.data[item] == l2.data[item]:
-                if arg.Flags.debug:
-                    print("Found", item, "in", arg.Flags.configsettings['link2'], "- it is the same")
+                msg.DEBUG("Found {} in {} - it is the same".format(item, arg.Flags.configsettings['link2']))
                 o1.data[item] = l1.data[item]
                 o1.data[item]['status'] = 'unchanged'
             else:
-                if arg.Flags.debug:
-                    print("Found", item, "in", arg.Flags.configsettings['link2'], "- it is changed")
+                msg.DEBUG("Found {} in {} - it is changed".format(item, arg.Flags.configsettings['link2']))
                 olditem = str(item) + '-old'
                 newitem = str(item) + '-new'
                 o1.data[olditem] = l1.data[item]
@@ -57,7 +42,7 @@ def main():
                 changedcount += 1
                 if arg.Flags.verbose:
                     changed = whatchanged(l1.data[item], l2.data[item])
-                    print(VERBOSE, "Changed for", item)
+                    msg.VERBOSE("Changed for {}".format(item))
                     for changeline in changed:
                         chan, reg = changeline[0].split(":")
                         if changeline[1] == '':
@@ -68,22 +53,18 @@ def main():
                             print(
                                 "\t{} {} CHANGED from version {} to {}".format(chan, reg, changeline[1], changeline[2]))
         else:
-            if arg.Flags.debug:
-                print("Did NOT find", item, "in", arg.Flags.configsettings['link2'], "- report it as removed")
+            msg.DEBUG("Did NOT find {} in {} - report it as removed".format(item, arg.Flags.configsettings['link2']))
             o1.data[item] = l1.data[item]
             o1.data[item]['status'] = 'removed'
-            if arg.Flags.verbose:
-                print(VERBOSE, "Removed", item)
+            msg.VERBOSE("Removed " + item)
     # check for any that are in the new file, but not in the old file
     for item in l2.data:
         if item not in l1.data:
-            if arg.Flags.debug:
-                print("Did NOT find", item, "in", arg.Flags.configsettings['link1'], "- this is a new item, report it")
+            msg.DEBUG("Did NOT find {} in {} - this is a new item, report it".format(item, arg.Flags.configsettings['link1']))
             o1.data[item] = l2.data[item]
             o1.data[item]['status'] = 'added'
             changedcount += 1
-            if arg.Flags.verbose:
-                print(VERBOSE, "New", item)
+            msg.VERBOSE("New {}".format(item))
     o1.writeoutput()
     print(changedcount)
 

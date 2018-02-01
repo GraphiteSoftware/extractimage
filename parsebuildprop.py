@@ -1,4 +1,3 @@
-import ericbase as eb
 import os.path
 import re
 import fnmatch
@@ -23,43 +22,39 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    if arg.Flags.test:
-        print(VERBOSE, "Running in Test Mode")
-    if arg.Flags.debug:
-        print(do)
+    msg = arg.MSG()
+    msg.TEST("Running in test mode")
+    msg.DEBUG(do)
 
     output_dict = {}
     rd = rb.ReadPlain(arg.Flags.configsettings['root'],
-                     arg.Flags.configsettings['extractprops'],
-                     '')
+                      arg.Flags.configsettings['extractprops'],
+                      '')
     wd = rb.WriteJson(arg.Flags.configsettings['root'],
                       arg.Flags.configsettings['extractprops'],
                       arg.Flags.configsettings['output'])
     listofprops = getfilelist(os.path.join(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractprops']))
     for propfile in listofprops:
         line_dict = {}
-        if arg.Flags.debug:
-            print(DEBUG, propfile.rstrip())
+        msg.DEBUG(propfile.rstrip())
         rd.plain = propfile
         rd.readinput()
         head, file = os.path.split(propfile)
         if file != '':
             imgfields = splitfilename(file)
         else:
-            if arg.Flags.debug:
-                print(WARNING, "bad file name in", propfile)
+            msg.DEBUG("Bad file name in" + propfile)
             imgfields = {"model": '', "region": '', "channel": '', "version": ''}
         for line in rd.data:
             if line[0] == '#':
                 if arg.Flags.test:
-                    print("Comment line")
+                    msg.TEST("Comment line")
                 else:
                     continue
             else:
                 prop = extractgroups(re.search(re_datetime, line))
                 if prop is not None:
-                    if arg.Flags.test:
-                        print("Found {} = {}".format(prop[0], prop[1]))
+                    msg.TEST("Found {} = {}".format(prop[0], prop[1]))
                     line_dict[prop[0]] = prop[1]
         imgfields['props'] = line_dict
         output_dict[file] = imgfields
@@ -80,10 +75,11 @@ def splitfilename(f: str) -> dict:
 
 
 def getfilelist(filepath) -> list:
+    global msg
     fl = []
     patternprop = r"*build.prop"
     if not os.path.isdir(filepath):
-        eb.printerror("Build Props directory does not exist or is not mounted: " + filepath)
+        msg.ERROR("Build Props directory does not exist or is not mounted: " + filepath)
     else:
         for file in os.listdir(filepath):
             # print("Checking: ", file)

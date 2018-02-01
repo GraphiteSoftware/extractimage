@@ -1,8 +1,5 @@
 import csv
-import ericbase as eb
 import os.path
-import re
-import fnmatch
 import argbase as arg
 import readbase as rb
 
@@ -23,12 +20,10 @@ def main():
     """main processing loop"""
     do = arg.MyArgs(usagemsg)
     do.processargs()
-    if arg.Flags.test:
-        print(VERBOSE, "Running in Test Mode")
-    if arg.Flags.debug:
-        print(do)
+    msg = arg.MSG()
+    msg.TEST("Running in test mode")
+    msg.DEBUG(do)
 
-    output_dict = {}
     rd = rb.ReadJson(arg.Flags.configsettings['root'],
                      arg.Flags.configsettings['extractprops'],
                      arg.Flags.configsettings['output'])
@@ -92,8 +87,6 @@ def addprop(p: dict):
 
 
 def writecsv():
-    if arg.Flags.debug:
-        print(DEBUG, CSV.propsoutput)
     csv_file = os.path.join(arg.Flags.configsettings['root'], CSV.file)
     csv_fh = open(csv_file, "w")
     csvw = csv.writer(csv_fh, quoting=csv.QUOTE_MINIMAL)

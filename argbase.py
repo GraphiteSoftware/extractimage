@@ -1,8 +1,8 @@
 from optparse import OptionParser
 import readbase as rb
-import ericbase as eb
 from sys import platform as _platform
 import json
+import sys
 
 
 class Flags:
@@ -13,6 +13,7 @@ class Flags:
     config = None
     ubuntu = False
     macos = False
+    error = False
     configsettings = {}
 
 
@@ -21,7 +22,7 @@ class MyArgs:
         self.usagemsg = use
 
     def __str__(self):
-        argstring = "[DEBUG] Program Arguments:"
+        argstring = "Program Arguments:"
         argstring = argstring + "\nFlags are:\n\tVerbose: {}\n\tDebug: {}\n\tTest: {}".format(Flags.verbose,
                                                                                  Flags.debug,
                                                                                  Flags.test)
@@ -62,7 +63,7 @@ class MyArgs:
             Flags.macos = True
         else:
             # Windows - will not work
-            eb.printerror("This program will only run correctly on Linux or Mac OS based systems")
+            MSG.ERROR("This program will only run correctly on Linux or Mac OS based systems")
 
         Flags.config = options.config
         if Flags.config is not None:
@@ -70,4 +71,23 @@ class MyArgs:
             cf.readinput()
             Flags.configsettings = cf.data
         else:
-            eb.printerror("Missing required configuration file (--config)")
+            MSG.ERROR("Missing required configuration file (--config)")
+
+
+class MSG:
+    def ERROR(self, msg):
+        print('[ERROR]', msg)
+        sys.exit(2)
+
+    def VERBOSE(self, msg):
+        if Flags.verbose:
+            print('[STATUS]', msg)
+
+    def DEBUG(self, msg):
+        if Flags.debug:
+            print('[DEBUG]', msg)
+
+    def TEST(self, msg):
+        if Flags.test:
+            print('[TEST]', msg)
+
