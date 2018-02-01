@@ -35,7 +35,7 @@ def main():
         for i in d[line]['images']:
             file_name = extractgroup(re.search(r"http:\/\/.*\/(.*)", i['image']))
             if arg.Flags.debug:
-                print(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractedimages'], file_name)
+                print(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractimages'], file_name)
             file_path = os.path.join(arg.Flags.configsettings['root'], arg.Flags.configsettings['extractimages'],
                                      file_name)
             if os.path.isfile(file_path) and not arg.Flags.force:
